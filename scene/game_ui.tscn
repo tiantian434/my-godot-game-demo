@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://dwuvxb4apjabm"]
+
+[ext_resource type="Theme" uid="uid://c5mpi25pin3e3" path="res://scene/UI_Theme/game_ui_theme.tres" id="1_4sf7q"]
+[ext_resource type="Script" uid="uid://c8c5rssqwm4u" path="res://script/game_ui_manager.gd" id="1_ni38n"]
+[ext_resource type="Shader" uid="uid://bs8yyees4m26s" path="res://Shader/rain_bow_style.tres" id="3_v5oon"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqgrm"]
+shader = ExtResource("3_v5oon")
+
+[node name="CanvasLayer_GameUI" type="CanvasLayer" unique_id=1366090611]
+script = ExtResource("1_ni38n")
+
+[node name="Control_UHD" type="Control" parent="." unique_id=713790695]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Control_UHD" unique_id=2127058203]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 720.0
+offset_bottom = 180.0
+theme = ExtResource("1_4sf7q")
+value = 50.0
+show_percentage = false
+
+[node name="Label_Coin" type="Label" parent="Control_UHD" unique_id=1695140639]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -289.0
+offset_top = 75.0
+offset_right = -186.0
+offset_bottom = 158.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+theme = ExtResource("1_4sf7q")
+text = "999"
+horizontal_alignment = 2
+
+[node name="Control_GameOver" type="Control" parent="." unique_id=105331411]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control_GameOver" unique_id=1469757541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_GameOver" unique_id=75807780]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -142.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme = ExtResource("1_4sf7q")
+
+[node name="Label_GameOver" type="Label" parent="Control_GameOver/VBoxContainer" unique_id=1285245592]
+layout_mode = 2
+theme = ExtResource("1_4sf7q")
+text = "GAME OVER"
+
+[node name="Button_Restart" type="Button" parent="Control_GameOver/VBoxContainer" unique_id=1340202375]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_4sf7q")
+text = "RESTART"
+
+[node name="Control_LevelCompleted" type="Control" parent="." unique_id=691811403]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control_LevelCompleted" unique_id=1967553747]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_LevelCompleted" unique_id=1326903289]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -543.0
+offset_top = -135.0
+offset_right = -3.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme = ExtResource("1_4sf7q")
+
+[node name="Label_LevelCompleted" type="Label" parent="Control_LevelCompleted/VBoxContainer" unique_id=1709954187]
+layout_mode = 2
+theme = ExtResource("1_4sf7q")
+text = "LEVEL COMPLETED"
+
+[node name="Button_NextLevel" type="Button" parent="Control_LevelCompleted/VBoxContainer" unique_id=869156351]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_4sf7q")
+text = "NEXT LEVEL"
+
+[node name="Control_Pause" type="Control" parent="." unique_id=524019522]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control_Pause" unique_id=767845307]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control_Pause" unique_id=1255136698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -201.0
+offset_right = 3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme = ExtResource("1_4sf7q")
+
+[node name="Label_Pause" type="Label" parent="Control_Pause/VBoxContainer2" unique_id=1284467285]
+layout_mode = 2
+theme = ExtResource("1_4sf7q")
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_Pause/VBoxContainer2" unique_id=1683238158]
+layout_mode = 2
+theme = ExtResource("1_4sf7q")
+
+[node name="Button_Resume" type="Button" parent="Control_Pause/VBoxContainer2/VBoxContainer" unique_id=489572475]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_4sf7q")
+text = "RESUME"
+
+[node name="Button_Restart" type="Button" parent="Control_Pause/VBoxContainer2/VBoxContainer" unique_id=1843007555]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_4sf7q")
+text = "RESTART"
+
+[node name="Button_MainMenu" type="Button" parent="Control_Pause/VBoxContainer2/VBoxContainer" unique_id=840653341]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_4sf7q")
+text = "MAIN MENU"
+
+[node name="Control_Finish" type="Control" parent="." unique_id=1927080090]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control_Finish" unique_id=179845597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label_Thanks" type="Label" parent="Control_Finish" unique_id=2121360034]
+material = SubResource("ShaderMaterial_nqgrm")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -11.5
+offset_right = 95.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+text = "THANK YOU FOR PLAYING"
+
+[node name="Button_MainMenu" type="Button" parent="Control_Finish" unique_id=1289739490]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = 126.0
+offset_right = 297.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4sf7q")
+theme_override_font_sizes/font_size = 100
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Control_GameOver/VBoxContainer/Button_Restart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="Control_LevelCompleted/VBoxContainer/Button_NextLevel" to="." method="_on_button_next_level_pressed"]
+[connection signal="pressed" from="Control_Pause/VBoxContainer2/VBoxContainer/Button_Resume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="Control_Pause/VBoxContainer2/VBoxContainer/Button_Restart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="Control_Pause/VBoxContainer2/VBoxContainer/Button_MainMenu" to="." method="_on_button_main_menu_pressed"]
+[connection signal="pressed" from="Control_Finish/Button_MainMenu" to="." method="_on_button_main_menu_pressed"]

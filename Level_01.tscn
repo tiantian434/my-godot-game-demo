@@ -1,0 +1,1544 @@
+[gd_scene format=4 uid="uid://40ocp32tp10x"]
+
+[ext_resource type="Texture2D" uid="uid://cmxkyggugthdf" path="res://Asset/Level/Background_Grass.png" id="1_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://dpqoa1dxf2gg2" path="res://Asset/Level/Tilemap_Platform.png" id="2_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://25o82ab44klm" path="res://scene/player.tscn" id="2_r0du0"]
+[ext_resource type="Texture2D" uid="uid://cbx1veo732dsw" path="res://Asset/Level/TreeAndGrass.png" id="4_fos0i"]
+[ext_resource type="Script" uid="uid://w05hmotp0lda" path="res://script/grass_gender_script.gd" id="5_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://d1iqwmsmus2px" path="res://scene/enemy.tscn" id="6_3dxm6"]
+[ext_resource type="Script" uid="uid://b8sr6dinvbnc3" path="res://enemy_manager.gd" id="6_03owx"]
+[ext_resource type="PackedScene" uid="uid://hieg58bvct0i" path="res://scene/Tree.tscn" id="7_lgr22"]
+[ext_resource type="PackedScene" uid="uid://dwuvxb4apjabm" path="res://scene/game_ui.tscn" id="8_trn2v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm0pq"]
+texture = ExtResource("1_uu6xs")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fos0i"]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_cm0pq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fos0i"]
+texture = ExtResource("2_cm0pq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, 16, 16, 16, 16, -16, -16, -16, -16, 16, -12, 16, -12, -12, 12, -12)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -12, 16, -16, -16, -16, -16, 16, -12, 16, -12, -12)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, -16, 16, -16, -16, -16)
+2:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, -12, 16, -16, 16, -16, 16)
+2:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(16, 8, 16, 16, 12, 16)
+2:0/0/terrains_peering_bit/right_side = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, -16, -16, 16, -16, 16, 16, 12, 16, 12, -12)
+3:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+3:0/0/terrains_peering_bit/bottom_side = 0
+3:0/0/terrains_peering_bit/left_side = 0
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+4:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+4:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/bottom_side = 0
+4:0/0/terrains_peering_bit/left_side = 0
+4:0/0/terrains_peering_bit/top_left_corner = 0
+4:0/0/terrains_peering_bit/top_side = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -12, 16, -12, 16, -16)
+5:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+5:0/0/terrains_peering_bit/right_side = 0
+5:0/0/terrains_peering_bit/bottom_right_corner = 0
+5:0/0/terrains_peering_bit/bottom_side = 0
+5:0/0/terrains_peering_bit/left_side = 0
+6:0/0 = 0
+6:0/0/terrain_set = 0
+6:0/0/terrain = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, -16, -16, 16, -16, 16, -12)
+6:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+6:0/0/terrains_peering_bit/right_side = 0
+6:0/0/terrains_peering_bit/bottom_side = 0
+6:0/0/terrains_peering_bit/bottom_left_corner = 0
+6:0/0/terrains_peering_bit/left_side = 0
+7:0/0 = 0
+7:0/0/terrain_set = 0
+7:0/0/terrain = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+7:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+7:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+7:0/0/terrains_peering_bit/right_side = 0
+7:0/0/terrains_peering_bit/bottom_side = 0
+7:0/0/terrains_peering_bit/left_side = 0
+7:0/0/terrains_peering_bit/top_side = 0
+7:0/0/terrains_peering_bit/top_right_corner = 0
+8:0/0 = 0
+8:0/0/terrain_set = 0
+8:0/0/terrain = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -12, 16, -16, -16, -16, -16, 16, -12, 16, -12, -12, 16, -12)
+8:0/0/terrains_peering_bit/right_side = 0
+8:0/0/terrains_peering_bit/bottom_right_corner = 0
+8:0/0/terrains_peering_bit/bottom_side = 0
+9:0/0 = 0
+9:0/0/terrain_set = 0
+9:0/0/terrain = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+9:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+9:0/0/terrains_peering_bit/right_side = 0
+9:0/0/terrains_peering_bit/bottom_right_corner = 0
+9:0/0/terrains_peering_bit/bottom_side = 0
+9:0/0/terrains_peering_bit/bottom_left_corner = 0
+9:0/0/terrains_peering_bit/left_side = 0
+9:0/0/terrains_peering_bit/top_side = 0
+9:1/0 = 0
+9:1/0/terrain_set = 0
+9:1/0/terrain = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+9:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+9:1/0/terrains_peering_bit/right_side = 0
+9:1/0/terrains_peering_bit/bottom_side = 0
+9:1/0/terrains_peering_bit/bottom_left_corner = 0
+9:1/0/terrains_peering_bit/left_side = 0
+9:1/0/terrains_peering_bit/top_side = 0
+9:1/0/terrains_peering_bit/top_right_corner = 0
+8:1/0 = 0
+8:1/0/terrain_set = 0
+8:1/0/terrain = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -12, 16, -16, 16, -16, -16)
+8:1/0/terrains_peering_bit/right_side = 0
+8:1/0/terrains_peering_bit/bottom_right_corner = 0
+8:1/0/terrains_peering_bit/bottom_side = 0
+8:1/0/terrains_peering_bit/top_side = 0
+8:1/0/terrains_peering_bit/top_right_corner = 0
+7:1/0 = 0
+7:1/0/terrain_set = 0
+7:1/0/terrain = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+7:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(12, -16, 16, -16, 16, 16, 12, 16)
+7:1/0/terrains_peering_bit/bottom_side = 0
+7:1/0/terrains_peering_bit/bottom_left_corner = 0
+7:1/0/terrains_peering_bit/left_side = 0
+7:1/0/terrains_peering_bit/top_side = 0
+6:1/0 = 0
+6:1/0/terrain_set = 0
+6:1/0/terrain = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+6:1/0/terrains_peering_bit/right_side = 0
+6:1/0/terrains_peering_bit/bottom_right_corner = 0
+6:1/0/terrains_peering_bit/bottom_side = 0
+6:1/0/terrains_peering_bit/bottom_left_corner = 0
+6:1/0/terrains_peering_bit/left_side = 0
+6:1/0/terrains_peering_bit/top_left_corner = 0
+6:1/0/terrains_peering_bit/top_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+5:1/0/terrains_peering_bit/right_side = 0
+5:1/0/terrains_peering_bit/bottom_right_corner = 0
+5:1/0/terrains_peering_bit/bottom_side = 0
+5:1/0/terrains_peering_bit/bottom_left_corner = 0
+5:1/0/terrains_peering_bit/left_side = 0
+5:1/0/terrains_peering_bit/top_side = 0
+5:1/0/terrains_peering_bit/top_right_corner = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -12, 16, -16, 16, -16, -16)
+4:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+4:1/0/terrains_peering_bit/right_side = 0
+4:1/0/terrains_peering_bit/bottom_right_corner = 0
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, 12, 16, 12, -16)
+3:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+3:1/0/physics_layer_0/polygon_2/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/left_side = 0
+3:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+2:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+2:1/0/physics_layer_0/polygon_2/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+2:1/0/physics_layer_0/polygon_3/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+2:1/0/terrains_peering_bit/right_side = 0
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+1:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+1:1/0/physics_layer_0/polygon_2/points = PackedVector2Array(-12, -16, -12, 16, -16, 16, -16, -16)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, 12, 16, 12, -16)
+0:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-12, -16, -12, 16, -16, 16, -16, -16)
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:2/size_in_atlas = Vector2i(1, 2)
+1:2/0 = 0
+1:2/0/texture_origin = Vector2i(0, -16)
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+1:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, -16, -16, 48, 16, 48, 16, 8, -12, 8, -12, -16)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/size_in_atlas = Vector2i(1, 2)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(0, -16)
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+2:2/0/physics_layer_0/polygon_2/points = PackedVector2Array(16, 8, 16, 48, -16, 48, -16, 8)
+2:2/0/terrains_peering_bit/right_side = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:2/size_in_atlas = Vector2i(1, 2)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(0, -16)
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+3:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(12, -16, 16, -16, 16, 48, -16, 48, -16, 8, 12, 8)
+3:2/0/terrains_peering_bit/left_side = 0
+3:2/0/terrains_peering_bit/top_side = 0
+4:2/0 = 0
+4:2/0/terrain_set = 0
+4:2/0/terrain = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -12, 16, -16, 16, -16, -16)
+4:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+4:2/0/terrains_peering_bit/right_side = 0
+4:2/0/terrains_peering_bit/bottom_side = 0
+4:2/0/terrains_peering_bit/top_side = 0
+4:2/0/terrains_peering_bit/top_right_corner = 0
+5:2/0 = 0
+5:2/0/terrain_set = 0
+5:2/0/terrain = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+5:2/0/terrains_peering_bit/right_side = 0
+5:2/0/terrains_peering_bit/bottom_right_corner = 0
+5:2/0/terrains_peering_bit/bottom_side = 0
+5:2/0/terrains_peering_bit/left_side = 0
+5:2/0/terrains_peering_bit/top_left_corner = 0
+5:2/0/terrains_peering_bit/top_side = 0
+5:2/0/terrains_peering_bit/top_right_corner = 0
+6:2/0 = 0
+6:2/0/terrain_set = 0
+6:2/0/terrain = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+6:2/0/terrains_peering_bit/right_side = 0
+6:2/0/terrains_peering_bit/bottom_side = 0
+6:2/0/terrains_peering_bit/bottom_left_corner = 0
+6:2/0/terrains_peering_bit/left_side = 0
+6:2/0/terrains_peering_bit/top_left_corner = 0
+6:2/0/terrains_peering_bit/top_side = 0
+6:2/0/terrains_peering_bit/top_right_corner = 0
+7:2/0 = 0
+7:2/0/terrain_set = 0
+7:2/0/terrain = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+7:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(12, 16, 12, -16, 16, -16, 16, 16)
+7:2/0/terrains_peering_bit/bottom_side = 0
+7:2/0/terrains_peering_bit/left_side = 0
+7:2/0/terrains_peering_bit/top_left_corner = 0
+7:2/0/terrains_peering_bit/top_side = 0
+8:2/0 = 0
+8:2/0/terrain_set = 0
+8:2/0/terrain = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+8:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+8:2/0/terrains_peering_bit/right_side = 0
+8:2/0/terrains_peering_bit/bottom_right_corner = 0
+8:2/0/terrains_peering_bit/bottom_side = 0
+8:2/0/terrains_peering_bit/left_side = 0
+8:2/0/terrains_peering_bit/top_side = 0
+8:2/0/terrains_peering_bit/top_right_corner = 0
+8:3/size_in_atlas = Vector2i(1, 2)
+8:3/0 = 0
+8:3/0/texture_origin = Vector2i(0, -16)
+8:3/0/terrain_set = 0
+8:3/0/terrain = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -16, -16, 48, 16, 48, 16, 8, -12, 8)
+8:3/0/terrains_peering_bit/right_side = 0
+8:3/0/terrains_peering_bit/top_side = 0
+8:3/0/terrains_peering_bit/top_right_corner = 0
+7:3/0 = 0
+7:3/0/terrain_set = 0
+7:3/0/terrain = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+7:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+7:3/0/physics_layer_0/polygon_2/points = PackedVector2Array(12, -16, 16, -16, 16, -12)
+7:3/0/terrains_peering_bit/right_side = 0
+7:3/0/terrains_peering_bit/bottom_right_corner = 0
+7:3/0/terrains_peering_bit/bottom_side = 0
+7:3/0/terrains_peering_bit/left_side = 0
+7:3/0/terrains_peering_bit/top_side = 0
+6:3/size_in_atlas = Vector2i(1, 2)
+6:3/0 = 0
+6:3/0/texture_origin = Vector2i(0, -16)
+6:3/0/terrain_set = 0
+6:3/0/terrain = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+6:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, 16, 8, 16, 48, -16, 48)
+6:3/0/terrains_peering_bit/right_side = 0
+6:3/0/terrains_peering_bit/left_side = 0
+6:3/0/terrains_peering_bit/top_left_corner = 0
+6:3/0/terrains_peering_bit/top_side = 0
+5:3/size_in_atlas = Vector2i(1, 2)
+5:3/0 = 0
+5:3/0/texture_origin = Vector2i(0, -16)
+5:3/0/terrain_set = 0
+5:3/0/terrain = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+5:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, 16, 8, 16, 48, -16, 48)
+5:3/0/terrains_peering_bit/right_side = 0
+5:3/0/terrains_peering_bit/left_side = 0
+5:3/0/terrains_peering_bit/top_side = 0
+5:3/0/terrains_peering_bit/top_right_corner = 0
+4:3/0 = 0
+4:3/0/terrain_set = 0
+4:3/0/terrain = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -16, -12, -16, -16)
+4:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+4:3/0/physics_layer_0/polygon_2/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+4:3/0/terrains_peering_bit/right_side = 0
+4:3/0/terrains_peering_bit/bottom_side = 0
+4:3/0/terrains_peering_bit/bottom_left_corner = 0
+4:3/0/terrains_peering_bit/left_side = 0
+4:3/0/terrains_peering_bit/top_side = 0
+0:4/size_in_atlas = Vector2i(1, 2)
+0:4/0 = 0
+0:4/0/texture_origin = Vector2i(0, -16)
+0:4/0/terrain_set = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 44, -12, 44)
+3:4/size_in_atlas = Vector2i(1, 2)
+3:4/0 = 0
+3:4/0/texture_origin = Vector2i(0, -16)
+3:4/0/terrain_set = 0
+3:4/0/terrain = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, -16, -16, 16, -16, 16, 48, -16, 48, -16, 8, 12, 8, 12, -12)
+3:4/0/terrains_peering_bit/left_side = 0
+2:4/size_in_atlas = Vector2i(1, 2)
+2:4/0 = 0
+2:4/0/texture_origin = Vector2i(0, -16)
+2:4/0/terrain_set = 0
+2:4/0/terrain = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -12, -16, -12, -16, -16, 16, -16)
+2:4/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 16, 48, -16, 48, -16, 8)
+2:4/0/terrains_peering_bit/right_side = 0
+2:4/0/terrains_peering_bit/left_side = 0
+1:4/size_in_atlas = Vector2i(1, 2)
+1:4/0 = 0
+1:4/0/texture_origin = Vector2i(0, -16)
+1:4/0/terrain_set = 0
+1:4/0/terrain = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -12, -12, -12, -12, 8, 16, 8, 16, 48, -16, 48, -16, -16, 16, -16)
+1:4/0/terrains_peering_bit/right_side = 0
+9:3/size_in_atlas = Vector2i(1, 2)
+9:3/0 = 0
+9:3/0/texture_origin = Vector2i(0, -16)
+9:3/0/terrain_set = 0
+9:3/0/terrain = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, 16, 8, 16, 48, -16, 48)
+9:3/0/terrains_peering_bit/right_side = 0
+9:3/0/terrains_peering_bit/left_side = 0
+9:3/0/terrains_peering_bit/top_left_corner = 0
+9:3/0/terrains_peering_bit/top_side = 0
+9:3/0/terrains_peering_bit/top_right_corner = 0
+10:3/0 = 0
+10:3/0/terrain_set = 0
+10:3/0/terrain = 0
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, -12, 16, -16, 16, -16, 8)
+10:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 16, 16, 12, 16)
+10:3/0/terrains_peering_bit/right_side = 0
+10:3/0/terrains_peering_bit/bottom_side = 0
+10:3/0/terrains_peering_bit/left_side = 0
+10:3/0/terrains_peering_bit/top_left_corner = 0
+10:3/0/terrains_peering_bit/top_side = 0
+10:3/0/terrains_peering_bit/top_right_corner = 0
+11:3/size_in_atlas = Vector2i(1, 2)
+11:3/0 = 0
+11:3/0/texture_origin = Vector2i(0, -16)
+11:3/0/terrain_set = 0
+11:3/0/terrain = 0
+11:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -16, 16, 48, -16, 48, -16, 8, 12, 8)
+11:3/0/terrains_peering_bit/left_side = 0
+11:3/0/terrains_peering_bit/top_left_corner = 0
+11:3/0/terrains_peering_bit/top_side = 0
+12:3/size_in_atlas = Vector2i(2, 2)
+12:3/0 = 0
+12:3/0/texture_origin = Vector2i(-16, -16)
+13:2/0 = 0
+13:2/0/terrain_set = 0
+13:2/0/terrain = 0
+13:2/0/terrains_peering_bit/right_side = 0
+13:2/0/terrains_peering_bit/bottom_right_corner = 0
+13:2/0/terrains_peering_bit/bottom_side = 0
+13:2/0/terrains_peering_bit/bottom_left_corner = 0
+13:2/0/terrains_peering_bit/left_side = 0
+13:2/0/terrains_peering_bit/top_left_corner = 0
+13:2/0/terrains_peering_bit/top_side = 0
+13:2/0/terrains_peering_bit/top_right_corner = 0
+12:2/0 = 0
+12:2/0/terrain_set = 0
+12:2/0/terrain = 0
+12:2/0/terrains_peering_bit/right_side = 0
+12:2/0/terrains_peering_bit/bottom_right_corner = 0
+12:2/0/terrains_peering_bit/bottom_side = 0
+12:2/0/terrains_peering_bit/bottom_left_corner = 0
+12:2/0/terrains_peering_bit/left_side = 0
+12:2/0/terrains_peering_bit/top_left_corner = 0
+12:2/0/terrains_peering_bit/top_side = 0
+12:2/0/terrains_peering_bit/top_right_corner = 0
+11:2/0 = 0
+11:2/0/terrain_set = 0
+11:2/0/terrain = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 12, 16, 16, 16, 16, -16)
+11:2/0/terrains_peering_bit/bottom_side = 0
+11:2/0/terrains_peering_bit/bottom_left_corner = 0
+11:2/0/terrains_peering_bit/left_side = 0
+11:2/0/terrains_peering_bit/top_left_corner = 0
+11:2/0/terrains_peering_bit/top_side = 0
+10:2/0 = 0
+10:2/0/terrain_set = 0
+10:2/0/terrain = 0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+10:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 8, -12, 16, -16, 16)
+10:2/0/terrains_peering_bit/right_side = 0
+10:2/0/terrains_peering_bit/bottom_right_corner = 0
+10:2/0/terrains_peering_bit/bottom_side = 0
+10:2/0/terrains_peering_bit/left_side = 0
+10:2/0/terrains_peering_bit/top_left_corner = 0
+10:2/0/terrains_peering_bit/top_side = 0
+13:1/0 = 0
+13:1/0/terrain_set = 0
+13:1/0/terrain = 0
+13:1/0/terrains_peering_bit/right_side = 0
+13:1/0/terrains_peering_bit/bottom_right_corner = 0
+13:1/0/terrains_peering_bit/bottom_side = 0
+13:1/0/terrains_peering_bit/bottom_left_corner = 0
+13:1/0/terrains_peering_bit/left_side = 0
+13:1/0/terrains_peering_bit/top_left_corner = 0
+13:1/0/terrains_peering_bit/top_side = 0
+13:1/0/terrains_peering_bit/top_right_corner = 0
+12:1/0 = 0
+12:1/0/terrain_set = 0
+12:1/0/terrain = 0
+12:1/0/terrains_peering_bit/right_side = 0
+12:1/0/terrains_peering_bit/bottom_right_corner = 0
+12:1/0/terrains_peering_bit/bottom_side = 0
+12:1/0/terrains_peering_bit/bottom_left_corner = 0
+12:1/0/terrains_peering_bit/left_side = 0
+12:1/0/terrains_peering_bit/top_left_corner = 0
+12:1/0/terrains_peering_bit/top_side = 0
+12:1/0/terrains_peering_bit/top_right_corner = 0
+11:1/0 = 0
+11:1/0/terrain_set = 0
+11:1/0/terrain = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(12, -16, 16, -12, 16, -16)
+11:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, 8, 12, 16, 16, 16)
+11:1/0/terrains_peering_bit/right_side = 0
+11:1/0/terrains_peering_bit/bottom_side = 0
+11:1/0/terrains_peering_bit/bottom_left_corner = 0
+11:1/0/terrains_peering_bit/left_side = 0
+11:1/0/terrains_peering_bit/top_left_corner = 0
+11:1/0/terrains_peering_bit/top_side = 0
+12:0/0 = 0
+12:0/0/terrain_set = 0
+12:0/0/terrain = 0
+12:0/0/terrains_peering_bit/right_side = 0
+12:0/0/terrains_peering_bit/bottom_right_corner = 0
+12:0/0/terrains_peering_bit/bottom_side = 0
+12:0/0/terrains_peering_bit/bottom_left_corner = 0
+12:0/0/terrains_peering_bit/left_side = 0
+12:0/0/terrains_peering_bit/top_left_corner = 0
+12:0/0/terrains_peering_bit/top_side = 0
+12:0/0/terrains_peering_bit/top_right_corner = 0
+11:0/0 = 0
+11:0/0/terrain_set = 0
+11:0/0/terrain = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 12, 16, 12, -12, -16, -12)
+11:0/0/terrains_peering_bit/bottom_side = 0
+11:0/0/terrains_peering_bit/bottom_left_corner = 0
+11:0/0/terrains_peering_bit/left_side = 0
+10:0/0 = 0
+10:0/0/terrain_set = 0
+10:0/0/terrain = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, -16, -16, -16)
+10:0/0/terrains_peering_bit/right_side = 0
+10:0/0/terrains_peering_bit/bottom_right_corner = 0
+10:0/0/terrains_peering_bit/bottom_side = 0
+10:0/0/terrains_peering_bit/bottom_left_corner = 0
+10:0/0/terrains_peering_bit/left_side = 0
+0:2/size_in_atlas = Vector2i(1, 2)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(0, -16)
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 48, 16, 48, 16, -16, 12, -16, 12, 8, -12, 8, -12, -16)
+0:2/0/terrains_peering_bit/top_side = 0
+
+[sub_resource type="TileSet" id="TileSet_3dxm6"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Platform"
+terrain_set_0/terrain_0/color = Color(0.7031371, 0.07199935, 0.29389566, 1)
+sources/2 = SubResource("TileSetAtlasSource_fos0i")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgr22"]
+texture = ExtResource("4_fos0i")
+texture_region_size = Vector2i(32, 32)
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_trn2v"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_lgr22")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgr22"]
+size = Vector2(70, 1041)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trn2v"]
+size = Vector2(1295, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03owx"]
+size = Vector2(151, 626)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkp8b"]
+size = Vector2(84.75, 251)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20pc6"]
+size = Vector2(94, 193)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3dxm6"]
+vertices = PackedVector2Array(1046, 662, 938, 662, 938, 458, 1046, 458, 854, 598, 810, 598, 810, 522, 854, 522, 310, 374, 202, 374, 202, 330, 310, 330, 630, 202, 662, 202, 662, 234, 522, 266, 554, 234, 694, 234, 694, 266, 726, 266, 726, 278, 426, 278, 426, 266, 522, 234, 554, 202, 586, 202, 630, 170, 586, 170, 950, 278, 874, 278, 874, 202, 950, 202, 1223, 70, 1223, 487.5, 1162, 487.5, 1162, 214, 1130, 214, 1130, 182, 1098, 182, 1098, 150, 1066, 150, 1066, 118, 1034, 118, 1034, 86, 726, 86, 726, 118, 714, 118, 714, 86, 682, 86, 682, 70, 118, 292.5, 70, 292.5, 70, 261.52344, 72.640625, 70, 118, 70, 534, 70, 534, 86, 502, 86, 458, 70, 458, 118, 502, 118, 974, 292.14063, 1115.8594, 238, 1138, 238, 1062.1797, 398, 921.8203, 398, 964.1406, 302, 1138, 814, 1110, 814, 1070, 676.1406, 1070, 413.64063, 914, 413.64063, 914, 676.1406, 878, 612.1406, 878, 477.64063, 870.1797, 462, 859.8594, 302, 1060.1406, 686, 1106, 228.14063, 974, 157.64063, 868.1406, 622, 334, 388.14063, 334, 285.64063, 434, 381.64063, 434, 398, 409.8203, 398, 441.8203, 366, 402, 413.64063, 377.8203, 430, 324.14063, 398, 537.8203, 142, 526, 132.14063, 526, 110, 548.1406, 110, 562, 125.640625, 562, 142, 558, 100.140625, 558, 78, 658, 78, 658, 100.140625, 646.1797, 110, 569.8203, 110, 667.8594, 110, 690, 110, 690, 132.14063, 678.1797, 142, 654, 142, 654, 125.640625, 750, 132.14063, 750, 110, 1010, 110, 1010, 132.14063, 966.1797, 142, 857.8203, 142, 1019.8594, 142, 1042, 142, 1042, 164.14063, 1051.8594, 174, 1074, 174, 1074, 196.14063, 1083.8594, 206, 1106, 206, 850, 157.64063, 750, 221.64063, 742.1797, 206, 740.1406, 142, 850, 292.14063, 793.8203, 462, 750, 292.14063, 718, 206, 718, 189.64063, 710.1797, 174, 699.8594, 142, 686, 174, 686, 157.64063, 516.1406, 142, 530, 157.64063, 530, 174, 505.8203, 174, 443.85938, 142, 498, 189.64063, 498, 206, 409.8203, 206, 402, 221.64063, 402, 238, 377.8203, 238, 142, 78, 1162, 874, 1162, 700.5, 1223, 700.5, 1223, 958, 641, 958, 1110, 874, 641, 394, 662, 394, 662, 426, 694, 426, 694, 458, 726, 458, 726, 714, 790, 714, 790, 746, 822, 746, 822, 778, 854, 778, 854, 810, 950, 810, 950, 842, 982, 842, 982, 874, 1066, 814, 1006, 814, 1006, 797.6406, 998.1797, 782, 974, 782, 974, 765.6406, 966.1797, 750, 878, 750, 878, 733.6406, 870.1797, 718, 846, 718, 846, 701.6406, 838.1797, 686, 814, 686, 814, 669.6406, 742.1797, 398, 718, 398, 718, 381.64063, 740.1406, 302, 710.1797, 366, 686, 366, 686, 349.64063, 466, 349.64063, 466, 366, 379.85938, 302, 402, 430, 370, 445.64063, 370, 686, 342, 686, 394, 746, 394, 490, 426, 490, 470, 958, 426, 458, 458, 458, 458, 426, 470, 426, 70, 958, 342, 746, 70, 563.5, 137.38281, 563.5, 150, 586, 137.38281, 554, 150, 554, 182, 586, 182, 618, 214, 618, 214, 746, 298, 686, 238, 686, 238, 573.6406, 230.17969, 558, 206, 558, 206, 541.6406, 198.17969, 526, 174, 526, 174, 509.64063, 187.85938, 398, 178, 388.14063, 166.17969, 494, 142, 494, 178, 285.64063, 434, 78, 434, 132.14063, 185.82031, 270, 370, 253.64063, 326.1797, 270, 923.8594, 686, 786, 477.64063, 750, 413.64063, 298, 746, 370, 292.14063, 806.1797, 654, 795.8594, 622, 473.8203, 334, 678.1797, 334, 750, 654, 786, 612.1406, 1066, 874)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(14, 17, 18, 15), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(21, 22, 15), PackedInt32Array(18, 21, 15), PackedInt32Array(15, 23, 16), PackedInt32Array(16, 24, 25), PackedInt32Array(12, 16, 25, 26), PackedInt32Array(26, 25, 27), PackedInt32Array(28, 29, 30, 31), PackedInt32Array(32, 33, 34, 35), PackedInt32Array(35, 36, 37, 32), PackedInt32Array(37, 38, 39, 32), PackedInt32Array(39, 40, 41, 32), PackedInt32Array(41, 42, 43, 32), PackedInt32Array(44, 45, 46, 47), PackedInt32Array(47, 48, 49, 32), PackedInt32Array(44, 47, 32), PackedInt32Array(43, 44, 32), PackedInt32Array(50, 51, 52, 53, 54), PackedInt32Array(55, 56, 57, 58), PackedInt32Array(59, 58, 57, 60), PackedInt32Array(61, 62, 63, 64, 65, 66), PackedInt32Array(63, 67, 68, 69, 70), PackedInt32Array(71, 72, 73, 74), PackedInt32Array(63, 70, 64), PackedInt32Array(65, 71, 74, 75, 76, 66), PackedInt32Array(77, 69, 68), PackedInt32Array(78, 62, 61, 79), PackedInt32Array(80, 73, 72), PackedInt32Array(81, 82, 83, 84, 85), PackedInt32Array(86, 83, 82), PackedInt32Array(81, 85, 87, 88, 89), PackedInt32Array(90, 91, 92, 93, 94, 95), PackedInt32Array(96, 97, 98, 99, 100, 101), PackedInt32Array(102, 103, 104, 105, 106, 107), PackedInt32Array(108, 109, 110, 111, 112, 113), PackedInt32Array(114, 115, 116, 79), PackedInt32Array(117, 118, 119), PackedInt32Array(120, 121, 78), PackedInt32Array(120, 78, 79), PackedInt32Array(119, 120, 79), PackedInt32Array(117, 119, 79), PackedInt32Array(116, 117, 79), PackedInt32Array(111, 114, 79, 112), PackedInt32Array(108, 113, 122, 123, 124, 125), PackedInt32Array(122, 126, 127, 128, 123), PackedInt32Array(125, 124, 129, 130), PackedInt32Array(125, 130, 131, 132), PackedInt32Array(132, 131, 133, 134), PackedInt32Array(132, 134, 105, 104), PackedInt32Array(102, 107, 100, 99), PackedInt32Array(135, 136, 137, 138, 139), PackedInt32Array(140, 141, 142, 139), PackedInt32Array(143, 144, 145, 146), PackedInt32Array(147, 148, 149, 150), PackedInt32Array(147, 150, 151, 152), PackedInt32Array(151, 153, 154, 155), PackedInt32Array(155, 156, 157, 151), PackedInt32Array(157, 158, 159, 151), PackedInt32Array(159, 160, 161, 151), PackedInt32Array(161, 162, 163, 151), PackedInt32Array(163, 164, 165, 151), PackedInt32Array(165, 166, 167, 151), PackedInt32Array(167, 168, 169, 151), PackedInt32Array(170, 171, 172), PackedInt32Array(173, 174, 175), PackedInt32Array(176, 177, 178), PackedInt32Array(179, 180, 181, 72), PackedInt32Array(182, 183, 184, 72), PackedInt32Array(185, 186, 187, 188), PackedInt32Array(189, 190, 191, 188), PackedInt32Array(192, 193, 86, 82, 194), PackedInt32Array(87, 195, 88), PackedInt32Array(196, 197, 198), PackedInt32Array(199, 200, 201, 202), PackedInt32Array(201, 203, 204, 202), PackedInt32Array(204, 205, 206, 202), PackedInt32Array(199, 202, 207, 208), PackedInt32Array(207, 209, 210, 211), PackedInt32Array(210, 212, 213, 211), PackedInt32Array(211, 214, 215, 207), PackedInt32Array(215, 216, 217, 207), PackedInt32Array(218, 219, 220, 196), PackedInt32Array(221, 222, 223), PackedInt32Array(224, 225, 226, 227), PackedInt32Array(228, 229, 230, 146, 231), PackedInt32Array(146, 232, 233, 142, 143), PackedInt32Array(89, 88, 196, 220, 221, 227), PackedInt32Array(93, 96, 101, 94), PackedInt32Array(135, 91, 90, 136), PackedInt32Array(139, 138, 140), PackedInt32Array(233, 139, 142), PackedInt32Array(234, 146, 145, 235, 236), PackedInt32Array(237, 77, 68, 176), PackedInt32Array(76, 75, 127, 126), PackedInt32Array(185, 188, 128, 127, 238, 239), PackedInt32Array(207, 217, 240), PackedInt32Array(208, 207, 240), PackedInt32Array(198, 208, 240, 218), PackedInt32Array(196, 198, 218), PackedInt32Array(227, 221, 223, 224), PackedInt32Array(227, 226, 229, 228), PackedInt32Array(234, 231, 146), PackedInt32Array(236, 235, 241, 82), PackedInt32Array(176, 178, 179, 72, 237), PackedInt32Array(242, 243, 80, 72, 184), PackedInt32Array(170, 172, 173, 68), PackedInt32Array(82, 241, 194), PackedInt32Array(244, 192, 194), PackedInt32Array(244, 194, 188, 245), PackedInt32Array(191, 245, 188), PackedInt32Array(187, 189, 188), PackedInt32Array(246, 239, 238, 247), PackedInt32Array(242, 246, 247, 243), PackedInt32Array(181, 182, 72), PackedInt32Array(175, 176, 68, 173), PackedInt32Array(170, 68, 152, 248), PackedInt32Array(248, 152, 151), PackedInt32Array(248, 151, 169)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(63, 44, 50, 986, 1253, 988, 1239, 41)])
+source_geometry_mode = 2
+
+[node name="ScenceNode" type="Node2D" unique_id=2008206083]
+
+[node name="TileMapLayer_Background" type="TileMapLayer" parent="." unique_id=967445501]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAACAAMAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fos0i")
+
+[node name="TileMapLayer_Platform" type="TileMapLayer" parent="." unique_id=1322957631 groups=["navigation_polygon_source_geometry_group"]]
+tile_map_data = PackedByteArray("AAAHAAcAAgAMAAEAAAAHAAYAAgAMAAIAAAAHAAUAAgAMAAAAAAAHAAQAAgAMAAEAAAAGAAcAAgANAAIAAAAGAAYAAgAMAAEAAAAGAAUAAgAMAAIAAAAGAAQAAgAMAAEAAAAFAAcAAgAMAAIAAAAFAAYAAgAMAAEAAAAFAAUAAgAMAAAAAAAFAAQAAgANAAIAAAAPAAoAAgAJAAMAAAAPAAkAAgAKAAAAAAAOAAsAAgALAAMAAAAOAAoAAgAGAAIAAAAOAAkAAgAKAAAAAAAOAAYAAgAJAAMAAAAOAAUAAgANAAIAAAANAAwAAgALAAMAAAANAAsAAgAGAAIAAAANAAoAAgANAAIAAAANAAkAAgAKAAAAAAANAAYAAgAJAAMAAAANAAUAAgAMAAAAAAANAAQAAgAGAAEAAAAMAAwAAgAGAAIAAAAMAAsAAgANAAIAAAAMAAoAAgAMAAIAAAAMAAkAAgAKAAAAAAAMAAcAAgALAAMAAAAMAAYAAgAGAAIAAAAMAAUAAgAMAAAAAAAMAAQAAgANAAIAAAAMAAMAAgAMAAIAAAALAAwAAgAMAAIAAAALAAsAAgANAAEAAAALAAoAAgAMAAAAAAALAAkAAgAGAAEAAAALAAgAAgALAAIAAAALAAcAAgAGAAIAAAALAAYAAgANAAEAAAALAAUAAgANAAIAAAALAAQAAgAMAAIAAAALAAMAAgAMAAIAAAAKAAwAAgAFAAEAAAAKAAsAAgAIAAEAAAAKAAoAAgAIAAEAAAAKAAkAAgAIAAEAAAAKAAgAAgAFAAIAAAAKAAcAAgAMAAIAAAAKAAYAAgANAAIAAAAKAAUAAgAMAAAAAAAKAAQAAgANAAIAAAAKAAMAAgANAAIAAAAJAAwAAgAKAAAAAAAJAAgAAgAJAAMAAAAJAAcAAgANAAIAAAAJAAYAAgAMAAIAAAAJAAUAAgANAAIAAAAJAAQAAgAMAAEAAAAJAAMAAgANAAEAAAALAA8AAgALAAIAAAALAA4AAgALAAIAAAALAA0AAgAGAAIAAAAKAA8AAgANAAEAAAAKAA4AAgAMAAEAAAAKAA0AAgANAAIAAAAJAA8AAgAMAAIAAAAJAA4AAgANAAEAAAAJAA0AAgAMAAEAAAAIAA8AAgAMAAAAAAAIAA4AAgANAAIAAAAIAA0AAgANAAEAAAAIAAwAAgAKAAAAAAAIAAgAAgAJAAMAAAAHAA8AAgAMAAEAAAAHAA4AAgAMAAIAAAAHAA0AAgAMAAIAAAAHAAwAAgAKAAAAAAAHAAgAAgAJAAMAAAAGAA8AAgAMAAEAAAAGAA4AAgAMAAAAAAAGAA0AAgAMAAAAAAAGAAwAAgAKAAAAAAAGAAgAAgAJAAMAAAAFAA8AAgAFAAIAAAAFAA4AAgANAAEAAAAFAA0AAgANAAIAAAAFAAwAAgAGAAEAAAAFAAsAAgALAAIAAAAFAAoAAgALAAIAAAAFAAkAAgALAAIAAAAFAAgAAgAGAAIAAAAEAA8AAgAIAAMAAAAEAA4AAgAIAAEAAAAEAA0AAgAIAAEAAAAEAAwAAgAIAAEAAAAEAAsAAgAIAAEAAAAEAAoAAgAIAAEAAAAEAAkAAgAIAAEAAAAEAAgAAgAIAAEAAAAJAAIAAgAKAAAAAAAIAAYAAgAMAAEAAAAIAAUAAgAMAAAAAAAIAAQAAgANAAIAAAAIAAMAAgAMAAEAAAAIAAIAAgAKAAAAAAAHAAMAAgANAAIAAAAHAAIAAgAKAAAAAAAIAAcAAgANAAIAAAAfAAgAAgAMAAAAAAAfAAcAAgANAAIAAAAfAAYAAgANAAIAAAAfAAUAAgANAAIAAAAfAAQAAgAGAAEAAAAfAAMAAgALAAAAAAAeAAgAAgAIAAEAAAAeAAcAAgAIAAEAAAAeAAYAAgAIAAEAAAAeAAUAAgAIAAEAAAAeAAQAAgAFAAIAAAAeAAMAAgAKAAAAAAAdAAQAAgAJAAMAAAAdAAMAAgAKAAAAAAAcAAQAAgAJAAMAAAAcAAMAAgAKAAAAAAAbAAQAAgAJAAMAAAAbAAMAAgAKAAAAAAAaAAgAAgALAAIAAAAaAAcAAgALAAIAAAAaAAYAAgALAAIAAAAaAAUAAgALAAIAAAAaAAQAAgAGAAIAAAAaAAMAAgAKAAAAAAAZAAgAAgAMAAEAAAAZAAcAAgAMAAEAAAAZAAYAAgAMAAEAAAAZAAUAAgAMAAAAAAAZAAQAAgAMAAIAAAAZAAMAAgAKAAAAAAAYAAgAAgAMAAIAAAAYAAcAAgAMAAIAAAAYAAYAAgANAAEAAAAYAAUAAgANAAIAAAAYAAQAAgAMAAEAAAAYAAMAAgAKAAAAAAAXAAgAAgAIAAEAAAAXAAcAAgAIAAEAAAAXAAYAAgAFAAIAAAAXAAUAAgAMAAEAAAAXAAQAAgAFAAEAAAAXAAMAAgAIAAAAAAAWAAYAAgAIAAMAAAAWAAUAAgAFAAIAAAAWAAQAAgAKAAAAAAAiABcAAgANAAIAAAAiABYAAgAMAAEAAAAiABUAAgANAAIAAAAiABQAAgANAAIAAAAiABMAAgAMAAEAAAAiABIAAgAMAAEAAAAiABEAAgAMAAEAAAAiABAAAgAMAAAAAAAiAA8AAgAMAAAAAAAiAA4AAgAMAAEAAAAiAA0AAgAMAAIAAAAiAAwAAgAMAAIAAAAiAAsAAgAMAAAAAAAiAAoAAgANAAIAAAAiAAkAAgANAAEAAAAiAAgAAgAMAAEAAAAiAAcAAgAGAAEAAAAhABcAAgAMAAAAAAAhABYAAgANAAIAAAAhABUAAgAFAAEAAAAhABQAAgAIAAEAAAAhABMAAgAIAAEAAAAhABIAAgAIAAEAAAAhABEAAgAIAAEAAAAhABAAAgAIAAEAAAAhAA8AAgAIAAEAAAAhAA4AAgAIAAEAAAAhAA0AAgAIAAEAAAAhAAwAAgAFAAIAAAAhAAsAAgANAAIAAAAhAAoAAgANAAEAAAAhAAkAAgAMAAEAAAAhAAgAAgAMAAAAAAAhAAcAAgANAAIAAAAgABcAAgAMAAAAAAAgABYAAgAMAAEAAAAgABUAAgAKAAAAAAAgAAwAAgAJAAMAAAAgAAsAAgAMAAEAAAAgAAoAAgAMAAAAAAAgAAkAAgAMAAAAAAAgAAgAAgANAAIAAAAgAAcAAgAMAAAAAAAfABcAAgAMAAIAAAAfABYAAgANAAEAAAAfABUAAgAKAAAAAAAfAAwAAgAJAAMAAAAfAAsAAgANAAEAAAAfAAoAAgANAAIAAAAfAAkAAgAMAAIAAAAeABcAAgAFAAIAAAAeABYAAgANAAEAAAAeABUAAgAKAAAAAAAeAAwAAgAJAAMAAAAeAAsAAgAMAAAAAAAeAAoAAgAMAAIAAAAeAAkAAgAFAAEAAAAdABcAAgAJAAMAAAAdABYAAgAMAAEAAAAdABUAAgAKAAAAAAAdAAwAAgAJAAMAAAAdAAsAAgAMAAIAAAAdAAoAAgAMAAIAAAAdAAkAAgAKAAAAAAAcABcAAgAJAAMAAAAcABYAAgAMAAEAAAAcABUAAgAGAAEAAAAcABQAAgALAAIAAAAcABMAAgALAAIAAAAcABIAAgALAAIAAAAcABEAAgALAAIAAAAcABAAAgALAAIAAAAcAA8AAgALAAIAAAAcAA4AAgALAAIAAAAcAA0AAgALAAIAAAAcAAwAAgAGAAIAAAAcAAsAAgAMAAEAAAAcAAoAAgAMAAEAAAAcAAkAAgAKAAAAAAAbABcAAgAIAAMAAAAbABYAAgAFAAIAAAAbABUAAgAMAAEAAAAbABQAAgANAAIAAAAbABMAAgAFAAEAAAAbABIAAgAIAAEAAAAbABEAAgAIAAEAAAAbABAAAgAIAAEAAAAbAA8AAgAIAAEAAAAbAA4AAgAFAAIAAAAbAA0AAgAMAAEAAAAbAAwAAgANAAEAAAAbAAsAAgAMAAEAAAAbAAoAAgAMAAIAAAAbAAkAAgAKAAAAAAAaAA0AAgANAAIAAAAaAAwAAgANAAEAAAAaAAsAAgANAAEAAAAaAAoAAgANAAEAAAAaAAkAAgAGAAEAAAAZAA0AAgAMAAIAAAAZAAwAAgAMAAEAAAAZAAsAAgANAAEAAAAZAAoAAgAMAAAAAAAZAAkAAgAMAAAAAAAYAA0AAgAMAAEAAAAYAAwAAgANAAEAAAAYAAsAAgAMAAEAAAAYAAoAAgAMAAAAAAAYAAkAAgAMAAEAAAAXAA0AAgAIAAEAAAAXAAwAAgAFAAIAAAAXAAsAAgAMAAEAAAAXAAoAAgAMAAEAAAAXAAkAAgAFAAEAAAAaABQAAgANAAIAAAAaABMAAgAKAAAAAAAaAA4AAgAJAAMAAAAZABQAAgAFAAIAAAAZABMAAgAKAAAAAAAZAA4AAgAJAAMAAAAYABQAAgAJAAMAAAAYABMAAgAGAAEAAAAYABIAAgALAAIAAAAYABEAAgALAAIAAAAYABAAAgALAAIAAAAYAA8AAgALAAIAAAAYAA4AAgAGAAIAAAAXABQAAgAIAAMAAAAXABMAAgAIAAEAAAAXABIAAgAIAAEAAAAXABEAAgAIAAEAAAAXABAAAgAIAAEAAAAXAA8AAgAIAAEAAAAXAA4AAgAIAAEAAAALABUAAgALAAMAAAALABQAAgALAAIAAAALABMAAgALAAIAAAALABIAAgALAAIAAAALABEAAgALAAIAAAALABAAAgALAAIAAAAKABQAAgAMAAAAAAAKABMAAgAMAAAAAAAKABIAAgANAAEAAAAKABEAAgANAAEAAAAKABAAAgAMAAIAAAAJABQAAgAMAAAAAAAJABMAAgANAAIAAAAJABIAAgAMAAEAAAAJABEAAgANAAEAAAAJABAAAgAMAAEAAAAIABUAAgAJAAMAAAAIABQAAgANAAEAAAAIABMAAgAMAAAAAAAIABIAAgANAAEAAAAIABEAAgAMAAIAAAAIABAAAgANAAEAAAAQAAkAAgAKAAAAAAAQAAoAAgAJAAMAAAARAAoAAgAJAAMAAAASAAoAAgAJAAMAAAASAAkAAgAKAAAAAAATAAkAAgAKAAAAAAARAAkAAgAKAAAAAAATAAoAAgAJAAMAAAAUAAoAAgAJAAMAAAAUAAkAAgAKAAAAAAAVAAkAAgAKAAAAAAAVAAoAAgAFAAIAAAAWAAkAAgAKAAAAAAAWAAoAAgAMAAEAAAAGAAMAAgAMAAEAAAAFAAMAAgAMAAAAAAAFAAIAAgAKAAAAAAAGAAIAAgAKAAAAAAALAAIAAgAKAAAAAAAKAAIAAgAKAAAAAAAMAAIAAgAKAAAAAAANAAIAAgALAAAAAAANAAMAAgALAAIAAAAEAAcAAgAIAAEAAAAEAAYAAgAIAAEAAAAEAAUAAgAIAAEAAAAEAAQAAgAIAAEAAAAEAAMAAgAIAAEAAAAEAAIAAgAIAAAAAAAMAA0AAgALAAMAAAAVAAsAAgAIAAMAAAAWAAsAAgAFAAIAAAAWAAwAAgAIAAMAAAAgAAUAAgAGAAEAAAAgAAYAAgAMAAEAAAAhAAUAAgALAAAAAAAhAAYAAgAGAAEAAAAgAAQAAgALAAAAAAAiAAYAAgALAAAAAAAjAAcAAgALAAAAAAAjAAgAAgALAAIAAAAjAAkAAgALAAIAAAAjAAoAAgALAAIAAAAjAAsAAgALAAIAAAAjAAwAAgALAAIAAAAjAA0AAgALAAIAAAAjAA4AAgALAAIAAAAjAA8AAgALAAIAAAAjABAAAgALAAIAAAAjABEAAgALAAIAAAAjABIAAgALAAIAAAAjABMAAgALAAIAAAAjABQAAgALAAIAAAAjABUAAgALAAIAAAAjABYAAgALAAIAAAAjABcAAgALAAIAAAAgABgAAgAMAAAAAAAgABkAAgAJAAMAAAAhABgAAgANAAEAAAAiABgAAgAMAAIAAAAjABgAAgALAAIAAAAjABkAAgALAAMAAAAHABAAAgAMAAEAAAAHABEAAgAFAAIAAAAHABIAAgAIAAEAAAAHABMAAgAIAAEAAAAHABQAAgAIAAEAAAAHABUAAgAIAAMAAAAPAAUAAgAGAAIAAAAPAAQAAgAKAAAAAAAPAAYAAgALAAMAAAAQAAQAAgAJAAEAAAAQAAUAAgALAAMAAAAQAAMAAgAIAAAAAAARAAMAAgAJAAEAAAARAAQAAgALAAMAAAASAAMAAgAJAAMAAAASAAIAAgAKAAAAAAATAAIAAgAKAAAAAAATAAMAAgAJAAMAAAARAAIAAgAIAAAAAAAUAAIAAgALAAAAAAAUAAMAAgAKAAIAAAAUAAQAAgAIAAMAAAAVAAQAAgAKAAIAAAAVAAMAAgALAAAAAAAVAAUAAgAIAAMAAAAOAAQAAgAKAAAAAAAFABAAAgAIAAMAAAAGABAAAgAFAAIAAAAGABEAAgAIAAMAAAAaABYAAgAIAAMAAAAaABUAAgAFAAIAAAAZABUAAgAIAAMAAAAfABkAAgAIAAMAAAAfABgAAgAFAAIAAAAeABgAAgAIAAMAAAAJABUAAgAMAAMAAAAhABkAAgAMAAMAAAA=")
+tile_set = SubResource("TileSet_3dxm6")
+
+[node name="Level" type="Node2D" parent="." unique_id=94069881]
+y_sort_enabled = true
+
+[node name="Player" parent="Level" unique_id=1345610845 instance=ExtResource("2_r0du0")]
+position = Vector2(179, 907)
+
+[node name="TileMapLayer_Grass" type="TileMapLayer" parent="Level" unique_id=686549802]
+tile_map_data = PackedByteArray("AAAOABQAAAACAAMAAAAPABQAAAACAAMAAAAOABMAAAACAAMAAAAOABUAAAACAAMAAAAPABMAAAACAAMAAAAPABUAAAACAAMAAAAQABUAAAACAAMAAAARABUAAAACAAMAAAASABUAAAACAAMAAAATABMAAAACAAMAAAATABQAAAACAAMAAAATABUAAAACAAMAAAAUABMAAAACAAMAAAAUABQAAAACAAMAAAAUABUAAAACAAMAAAAVABMAAAACAAMAAAAVABQAAAACAAMAAAAVABUAAAACAAMAAAANABMAAAACAAMAAAANABQAAAACAAMAAAAOABYAAAACAAMAAAAOABcAAAACAAMAAAAPABYAAAACAAMAAAAPABcAAAACAAMAAAAPABgAAAACAAMAAAAQABYAAAACAAMAAAAQABcAAAACAAMAAAAQABgAAAACAAMAAAARABYAAAACAAMAAAARABcAAAACAAMAAAARABgAAAACAAMAAAASABYAAAACAAMAAAASABcAAAACAAMAAAASABgAAAACAAMAAAATABYAAAACAAMAAAATABcAAAACAAMAAAATABgAAAACAAMAAAAUABYAAAACAAMAAAAUABcAAAACAAMAAAAUABgAAAACAAMAAAAVABYAAAACAAMAAAAVABcAAAACAAMAAAAVABgAAAACAAMAAAAWABMAAAACAAMAAAAWABQAAAACAAMAAAAWABUAAAACAAMAAAAWABYAAAACAAMAAAAWABcAAAACAAMAAAAWABgAAAACAAMAAAADABgAAAACAAMAAAAEABgAAAACAAMAAAAFABgAAAACAAMAAAAGABgAAAACAAMAAAAHABgAAAACAAMAAAAIABgAAAACAAMAAAAJABgAAAACAAMAAAAKABgAAAACAAMAAAALABgAAAACAAMAAAAMABgAAAACAAMAAAACABMAAAACAAMAAAACABQAAAACAAMAAAACABUAAAACAAMAAAACABYAAAACAAMAAAACABcAAAACAAMAAAADABMAAAACAAMAAAADABQAAAACAAMAAAADABUAAAACAAMAAAADABYAAAACAAMAAAADABcAAAACAAMAAAAEABMAAAACAAMAAAAEABQAAAACAAMAAAAEABUAAAACAAMAAAAEABYAAAACAAMAAAAEABcAAAACAAMAAAAFABQAAAACAAMAAAAFABUAAAACAAMAAAAFABYAAAACAAMAAAAFABcAAAACAAMAAAACABIAAAACAAMAAAADABIAAAACAAMAAAACABEAAAACAAMAAAAEABkAAAACAAMAAAAEABoAAAACAAMAAAADABkAAAACAAMAAAAFABkAAAACAAMAAAAGABkAAAACAAMAAAAGABoAAAACAAMAAAAHABoAAAACAAMAAAAHABsAAAACAAMAAAAGABsAAAACAAMAAAAFABoAAAACAAMAAAAIABsAAAACAAMAAAAIABwAAAACAAMAAAAHABwAAAACAAMAAAAGABwAAAACAAMAAAAIABoAAAACAAMAAAAIABkAAAACAAMAAAAHABkAAAACAAMAAAAJABkAAAACAAMAAAAKABkAAAACAAMAAAAJABoAAAACAAMAAAAKABoAAAACAAMAAAALABoAAAACAAMAAAAMABoAAAACAAMAAAAMABkAAAACAAMAAAALABkAAAACAAMAAAANABkAAAACAAMAAAANABgAAAACAAMAAAANABoAAAACAAMAAAAMABsAAAACAAMAAAALABsAAAACAAMAAAAKABsAAAACAAMAAAANABsAAAACAAMAAAAOABsAAAACAAMAAAAPABsAAAACAAMAAAAPABwAAAACAAMAAAAOABwAAAACAAMAAAANABwAAAACAAMAAAAMABwAAAACAAMAAAALABwAAAACAAMAAAAKABwAAAACAAMAAAAJABwAAAACAAMAAAAJABsAAAACAAMAAAAFABwAAAACAAMAAAAEABsAAAACAAMAAAADABsAAAACAAMAAAAEABwAAAACAAMAAAADABwAAAACAAMAAAACABwAAAACAAMAAAACABsAAAACAAMAAAADABoAAAACAAMAAAACABoAAAACAAMAAAACABkAAAACAAMAAAACABgAAAACAAMAAAAVABkAAAACAAMAAAAVABoAAAACAAMAAAAVABsAAAACAAMAAAATABkAAAACAAMAAAASABkAAAACAAMAAAASABoAAAACAAMAAAARABoAAAACAAMAAAAUABkAAAACAAMAAAATABoAAAACAAMAAAATABsAAAACAAMAAAATABwAAAACAAMAAAAUABwAAAACAAMAAAAVABwAAAACAAMAAAAWABsAAAACAAMAAAAWABoAAAACAAMAAAAWABkAAAACAAMAAAAXABkAAAACAAMAAAAWABwAAAACAAMAAAAXABoAAAACAAMAAAAXABgAAAACAAMAAAAXABsAAAACAAMAAAAYABkAAAACAAMAAAAYABgAAAACAAMAAAAYABcAAAACAAMAAAAYABoAAAACAAMAAAAZABsAAAACAAMAAAAYABsAAAACAAMAAAAZABoAAAACAAMAAAAaABoAAAACAAMAAAAZABkAAAACAAMAAAAYABwAAAACAAMAAAAZABwAAAACAAMAAAAaABwAAAACAAMAAAAbABwAAAACAAMAAAAcABwAAAACAAMAAAAXABwAAAACAAMAAAAdABwAAAACAAMAAAAaABsAAAACAAMAAAAbABsAAAACAAMAAAAcABsAAAACAAMAAAAdABsAAAACAAMAAAAeABwAAAACAAMAAAAbABoAAAACAAMAAAAcABoAAAACAAMAAAAeABsAAAACAAMAAAAfABwAAAACAAMAAAAgABwAAAACAAMAAAAhABwAAAACAAMAAAAhAB0AAAACAAMAAAAiABwAAAACAAMAAAAjABwAAAACAAMAAAAkABwAAAACAAMAAAAkABsAAAACAAMAAAAlABsAAAACAAMAAAAlABwAAAACAAMAAAAlABoAAAACAAMAAAAlAB0AAAACAAMAAAAlABkAAAACAAMAAAAmABkAAAACAAMAAAAmABgAAAACAAMAAAAlABgAAAACAAMAAAAlABcAAAACAAMAAAAlABYAAAACAAMAAAAlAAwAAAACAAMAAAAlAA0AAAACAAMAAAAlAA4AAAACAAMAAAAlAA8AAAACAAMAAAAmAA0AAAACAAMAAAAmAAwAAAACAAMAAAAmAAsAAAACAAMAAAAmAAoAAAACAAMAAAAmAAkAAAACAAMAAAAlAAoAAAACAAMAAAAlAAsAAAACAAMAAAAmAAgAAAACAAMAAAAmAAcAAAACAAMAAAAmAAYAAAACAAMAAAAmAAUAAAACAAMAAAAmAAQAAAACAAMAAAAlAAUAAAACAAMAAAAlAAYAAAACAAMAAAAlAAcAAAACAAMAAAAlAAgAAAACAAMAAAAlAAQAAAACAAMAAAAlAAMAAAACAAMAAAAkAAUAAAACAAMAAAAkAAQAAAACAAMAAAAkAAMAAAACAAMAAAAlAAIAAAACAAMAAAAlAAEAAAACAAMAAAAkAAIAAAACAAMAAAAkAAEAAAACAAMAAAAjAAMAAAACAAMAAAAjAAQAAAACAAMAAAAiAAMAAAACAAMAAAAjAAIAAAACAAMAAAAiAAIAAAACAAMAAAAiAAEAAAACAAMAAAAhAAIAAAACAAMAAAAgAAEAAAACAAMAAAAhAAEAAAACAAMAAAAfAAEAAAACAAMAAAAeAAEAAAACAAMAAAAdAAEAAAACAAMAAAAcAAEAAAACAAMAAAAbAAEAAAACAAMAAAAaAAEAAAACAAMAAAAZAAEAAAACAAMAAAAYAAEAAAACAAMAAAAXAAEAAAACAAMAAAAWAAEAAAACAAMAAAAVAAEAAAACAAMAAAAUAAAAAAACAAMAAAAVAAAAAAACAAMAAAATAAAAAAACAAMAAAASAAAAAAACAAMAAAARAAAAAAACAAMAAAAQAAAAAAACAAMAAAAPAAAAAAACAAMAAAAOAAAAAAACAAMAAAANAAAAAAACAAMAAAAMAAAAAAACAAMAAAAQAAEAAAACAAMAAAAPAAEAAAACAAMAAAALAAAAAAACAAMAAAAWAAAAAAACAAMAAAAXAAAAAAACAAMAAAAOAAEAAAACAAMAAAANAAEAAAACAAMAAAAMAAEAAAACAAMAAAALAAEAAAACAAMAAAAKAAEAAAACAAMAAAAJAAEAAAACAAMAAAAJAAAAAAACAAMAAAAIAAAAAAACAAMAAAAHAAAAAAACAAMAAAAGAAAAAAACAAMAAAAFAAAAAAACAAMAAAAEAAAAAAACAAMAAAADAAAAAAACAAMAAAACAAAAAAACAAMAAAACAAEAAAACAAMAAAACAAIAAAACAAMAAAACAAMAAAACAAMAAAACAAQAAAACAAMAAAACAAUAAAACAAMAAAACAAYAAAACAAMAAAACAAcAAAACAAMAAAABAAYAAAACAAMAAAABAAcAAAACAAMAAAABAAgAAAACAAMAAAAPAAIAAAACAAMAAAASAAcAAAACAAMAAAARAAcAAAACAAMAAAASAAYAAAACAAMAAAATAAcAAAACAAMAAAATAAgAAAACAAMAAAASAAgAAAACAAMAAAARAAgAAAACAAMAAAAUAAgAAAACAAMAAAAcAAcAAAACAAMAAAAcAAYAAAACAAMAAAAeAA8AAAACAAMAAAAeABAAAAACAAMAAAAfABAAAAACAAMAAAAfABEAAAACAAMAAAAfAA8AAAACAAMAAAAeABEAAAACAAMAAAAeABIAAAACAAMAAAAfABIAAAACAAMAAAAUAA4AAAACAAMAAAAUAA8AAAACAAMAAAAUABAAAAACAAMAAAAUABEAAAACAAMAAAAVAA8AAAACAAMAAAAVABAAAAACAAMAAAAUAA0AAAACAAMAAAATAA4AAAACAAMAAAATAA8AAAACAAMAAAASAA8AAAACAAMAAAARAA8AAAACAAMAAAARABAAAAACAAMAAAAQABAAAAACAAMAAAAPABAAAAACAAMAAAAOABAAAAACAAMAAAAOAA8AAAACAAMAAAAOAA4AAAACAAMAAAAOABEAAAACAAMAAAANABAAAAACAAMAAAANABEAAAACAAMAAAAOABIAAAACAAMAAAAIAAoAAAACAAMAAAAHAAoAAAACAAMAAAAPAAgAAAACAAMAAAAQAAgAAAACAAMAAAAVAAgAAAACAAMAAAATAAYAAAACAAMAAAAeABMAAAACAAMAAAAfABMAAAACAAMAAAAfAA0AAAACAAMAAAANABcAAAACAAMAAAANABYAAAACAAMAAAANABUAAAACAAMAAAACABAAAAACAAMAAAACAA8AAAACAAMAAAACAA4AAAACAAMAAAACAA0AAAACAAMAAAACAAwAAAACAAMAAAACAAsAAAACAAMAAAACAAoAAAACAAMAAAACAAkAAAACAAMAAAACAAgAAAACAAMAAAA=")
+tile_set = SubResource("TileSet_trn2v")
+script = ExtResource("5_3dxm6")
+
+[node name="EnemyGroup" type="Node2D" parent="Level" unique_id=2082108875]
+y_sort_enabled = true
+script = ExtResource("6_03owx")
+
+[node name="Enemy" parent="Level/EnemyGroup" unique_id=1790160459 instance=ExtResource("6_3dxm6")]
+position = Vector2(1016, 770)
+
+[node name="Enemy2" parent="Level/EnemyGroup" unique_id=1717019310 instance=ExtResource("6_3dxm6")]
+position = Vector2(287, 217)
+
+[node name="Enemy3" parent="Level/EnemyGroup" unique_id=296062056 instance=ExtResource("6_3dxm6")]
+position = Vector2(289, 518)
+
+[node name="Enemy4" parent="Level/EnemyGroup" unique_id=886841550 instance=ExtResource("6_3dxm6")]
+position = Vector2(982, 367)
+
+[node name="Enemy5" parent="Level/EnemyGroup" unique_id=813916428 instance=ExtResource("6_3dxm6")]
+position = Vector2(176, 136)
+
+[node name="Enemy6" parent="Level/EnemyGroup" unique_id=2071171542 instance=ExtResource("6_3dxm6")]
+position = Vector2(391, 136)
+
+[node name="Enemy7" parent="Level/EnemyGroup" unique_id=834985645 instance=ExtResource("6_3dxm6")]
+position = Vector2(816, 426)
+
+[node name="Enemy8" parent="Level/EnemyGroup" unique_id=1652977422 instance=ExtResource("6_3dxm6")]
+position = Vector2(347, 831)
+
+[node name="Enemy9" parent="Level/EnemyGroup" unique_id=1354991088 instance=ExtResource("6_3dxm6")]
+position = Vector2(596, 321)
+
+[node name="Enemy10" parent="Level/EnemyGroup" unique_id=1822756446 instance=ExtResource("6_3dxm6")]
+position = Vector2(1107, 730)
+
+[node name="TreeGroup" type="Node2D" parent="Level" unique_id=1915483014]
+y_sort_enabled = true
+
+[node name="Tree" parent="Level/TreeGroup" unique_id=944140495 instance=ExtResource("7_lgr22")]
+position = Vector2(100, 1015)
+
+[node name="Tree2" parent="Level/TreeGroup" unique_id=1396737484 instance=ExtResource("7_lgr22")]
+position = Vector2(76, 1017)
+
+[node name="Tree3" parent="Level/TreeGroup" unique_id=2063643785 instance=ExtResource("7_lgr22")]
+position = Vector2(138, 1019)
+
+[node name="Tree4" parent="Level/TreeGroup" unique_id=1842411752 instance=ExtResource("7_lgr22")]
+position = Vector2(26, 1019)
+
+[node name="Tree5" parent="Level/TreeGroup" unique_id=1068517615 instance=ExtResource("7_lgr22")]
+position = Vector2(168, 1013)
+
+[node name="Tree6" parent="Level/TreeGroup" unique_id=716848184 instance=ExtResource("7_lgr22")]
+position = Vector2(193, 1019)
+
+[node name="Tree7" parent="Level/TreeGroup" unique_id=464835081 instance=ExtResource("7_lgr22")]
+position = Vector2(214, 1013)
+
+[node name="Tree8" parent="Level/TreeGroup" unique_id=479647946 instance=ExtResource("7_lgr22")]
+position = Vector2(53, 1015)
+
+[node name="Tree9" parent="Level/TreeGroup" unique_id=1222603544 instance=ExtResource("7_lgr22")]
+position = Vector2(240, 1017)
+
+[node name="Tree10" parent="Level/TreeGroup" unique_id=454849169 instance=ExtResource("7_lgr22")]
+position = Vector2(337, 1017)
+
+[node name="Tree11" parent="Level/TreeGroup" unique_id=463671468 instance=ExtResource("7_lgr22")]
+position = Vector2(305, 1017)
+
+[node name="Tree12" parent="Level/TreeGroup" unique_id=249701085 instance=ExtResource("7_lgr22")]
+position = Vector2(367, 1019)
+
+[node name="Tree13" parent="Level/TreeGroup" unique_id=1390421526 instance=ExtResource("7_lgr22")]
+position = Vector2(255, 1019)
+
+[node name="Tree14" parent="Level/TreeGroup" unique_id=526008954 instance=ExtResource("7_lgr22")]
+position = Vector2(397, 1013)
+
+[node name="Tree15" parent="Level/TreeGroup" unique_id=1628136201 instance=ExtResource("7_lgr22")]
+position = Vector2(422, 1019)
+
+[node name="Tree16" parent="Level/TreeGroup" unique_id=1065026596 instance=ExtResource("7_lgr22")]
+position = Vector2(443, 1013)
+
+[node name="Tree17" parent="Level/TreeGroup" unique_id=1999120842 instance=ExtResource("7_lgr22")]
+position = Vector2(282, 1015)
+
+[node name="Tree18" parent="Level/TreeGroup" unique_id=616969840 instance=ExtResource("7_lgr22")]
+position = Vector2(469, 1017)
+
+[node name="Tree19" parent="Level/TreeGroup" unique_id=262045412 instance=ExtResource("7_lgr22")]
+position = Vector2(575, 1014)
+
+[node name="Tree20" parent="Level/TreeGroup" unique_id=1529960988 instance=ExtResource("7_lgr22")]
+position = Vector2(551, 1016)
+
+[node name="Tree21" parent="Level/TreeGroup" unique_id=613072251 instance=ExtResource("7_lgr22")]
+position = Vector2(613, 1018)
+
+[node name="Tree22" parent="Level/TreeGroup" unique_id=1833588564 instance=ExtResource("7_lgr22")]
+position = Vector2(501, 1018)
+
+[node name="Tree23" parent="Level/TreeGroup" unique_id=141659882 instance=ExtResource("7_lgr22")]
+position = Vector2(643, 1012)
+
+[node name="Tree24" parent="Level/TreeGroup" unique_id=995471307 instance=ExtResource("7_lgr22")]
+position = Vector2(668, 1018)
+
+[node name="Tree25" parent="Level/TreeGroup" unique_id=1665296985 instance=ExtResource("7_lgr22")]
+position = Vector2(689, 1012)
+
+[node name="Tree26" parent="Level/TreeGroup" unique_id=2056242596 instance=ExtResource("7_lgr22")]
+position = Vector2(528, 1014)
+
+[node name="Tree27" parent="Level/TreeGroup" unique_id=1543218070 instance=ExtResource("7_lgr22")]
+position = Vector2(715, 1016)
+
+[node name="Tree28" parent="Level/TreeGroup" unique_id=1692984936 instance=ExtResource("7_lgr22")]
+position = Vector2(821, 1011)
+
+[node name="Tree29" parent="Level/TreeGroup" unique_id=1518221742 instance=ExtResource("7_lgr22")]
+position = Vector2(797, 1013)
+
+[node name="Tree30" parent="Level/TreeGroup" unique_id=1943344217 instance=ExtResource("7_lgr22")]
+position = Vector2(859, 1015)
+
+[node name="Tree31" parent="Level/TreeGroup" unique_id=54392824 instance=ExtResource("7_lgr22")]
+position = Vector2(747, 1015)
+
+[node name="Tree32" parent="Level/TreeGroup" unique_id=2096246077 instance=ExtResource("7_lgr22")]
+position = Vector2(889, 1009)
+
+[node name="Tree33" parent="Level/TreeGroup" unique_id=130435951 instance=ExtResource("7_lgr22")]
+position = Vector2(914, 1015)
+
+[node name="Tree34" parent="Level/TreeGroup" unique_id=1347468266 instance=ExtResource("7_lgr22")]
+position = Vector2(935, 1009)
+
+[node name="Tree35" parent="Level/TreeGroup" unique_id=495582688 instance=ExtResource("7_lgr22")]
+position = Vector2(774, 1011)
+
+[node name="Tree36" parent="Level/TreeGroup" unique_id=1491530432 instance=ExtResource("7_lgr22")]
+position = Vector2(961, 1013)
+
+[node name="Tree37" parent="Level/TreeGroup" unique_id=351032494 instance=ExtResource("7_lgr22")]
+position = Vector2(1058, 1011)
+
+[node name="Tree38" parent="Level/TreeGroup" unique_id=1115893855 instance=ExtResource("7_lgr22")]
+position = Vector2(1034, 1013)
+
+[node name="Tree39" parent="Level/TreeGroup" unique_id=514431006 instance=ExtResource("7_lgr22")]
+position = Vector2(1096, 1015)
+
+[node name="Tree40" parent="Level/TreeGroup" unique_id=187627594 instance=ExtResource("7_lgr22")]
+position = Vector2(984, 1015)
+
+[node name="Tree41" parent="Level/TreeGroup" unique_id=2062840399 instance=ExtResource("7_lgr22")]
+position = Vector2(1126, 1009)
+
+[node name="Tree42" parent="Level/TreeGroup" unique_id=1646586708 instance=ExtResource("7_lgr22")]
+position = Vector2(1151, 1015)
+
+[node name="Tree43" parent="Level/TreeGroup" unique_id=358359086 instance=ExtResource("7_lgr22")]
+position = Vector2(1172, 1009)
+
+[node name="Tree44" parent="Level/TreeGroup" unique_id=133474916 instance=ExtResource("7_lgr22")]
+position = Vector2(1011, 1011)
+
+[node name="Tree45" parent="Level/TreeGroup" unique_id=1957564098 instance=ExtResource("7_lgr22")]
+position = Vector2(1198, 1013)
+
+[node name="Tree46" parent="Level/TreeGroup" unique_id=1339325205 instance=ExtResource("7_lgr22")]
+position = Vector2(1228, 1018)
+
+[node name="Tree47" parent="Level/TreeGroup" unique_id=271145286 instance=ExtResource("7_lgr22")]
+position = Vector2(1251, 980)
+
+[node name="Tree48" parent="Level/TreeGroup" unique_id=1352236558 instance=ExtResource("7_lgr22")]
+position = Vector2(1273, 912)
+
+[node name="Tree49" parent="Level/TreeGroup" unique_id=888347767 instance=ExtResource("7_lgr22")]
+position = Vector2(1252, 936)
+
+[node name="Tree50" parent="Level/TreeGroup" unique_id=432347619 instance=ExtResource("7_lgr22")]
+position = Vector2(1267, 1000)
+
+[node name="Tree51" parent="Level/TreeGroup" unique_id=1749073179 instance=ExtResource("7_lgr22")]
+position = Vector2(1263, 893)
+
+[node name="Tree52" parent="Level/TreeGroup" unique_id=133129027 instance=ExtResource("7_lgr22")]
+position = Vector2(1275, 970)
+
+[node name="Tree53" parent="Level/TreeGroup" unique_id=1037856091 instance=ExtResource("7_lgr22")]
+position = Vector2(1250, 867)
+
+[node name="Tree54" parent="Level/TreeGroup" unique_id=1908793268 instance=ExtResource("7_lgr22")]
+position = Vector2(1272, 799)
+
+[node name="Tree55" parent="Level/TreeGroup" unique_id=1996475402 instance=ExtResource("7_lgr22")]
+position = Vector2(1251, 823)
+
+[node name="Tree56" parent="Level/TreeGroup" unique_id=1962627449 instance=ExtResource("7_lgr22")]
+position = Vector2(1266, 887)
+
+[node name="Tree57" parent="Level/TreeGroup" unique_id=230204202 instance=ExtResource("7_lgr22")]
+position = Vector2(1262, 780)
+
+[node name="Tree58" parent="Level/TreeGroup" unique_id=1298077794 instance=ExtResource("7_lgr22")]
+position = Vector2(1274, 857)
+
+[node name="Tree59" parent="Level/TreeGroup" unique_id=1155203573 instance=ExtResource("7_lgr22")]
+position = Vector2(1253, 729)
+
+[node name="Tree60" parent="Level/TreeGroup" unique_id=463344881 instance=ExtResource("7_lgr22")]
+position = Vector2(1275, 661)
+
+[node name="Tree61" parent="Level/TreeGroup" unique_id=426425874 instance=ExtResource("7_lgr22")]
+position = Vector2(1254, 685)
+
+[node name="Tree62" parent="Level/TreeGroup" unique_id=1092843011 instance=ExtResource("7_lgr22")]
+position = Vector2(1269, 749)
+
+[node name="Tree63" parent="Level/TreeGroup" unique_id=1107370389 instance=ExtResource("7_lgr22")]
+position = Vector2(1265, 642)
+
+[node name="Tree64" parent="Level/TreeGroup" unique_id=395083607 instance=ExtResource("7_lgr22")]
+position = Vector2(1277, 719)
+
+[node name="Tree65" parent="Level/TreeGroup" unique_id=1397925225 instance=ExtResource("7_lgr22")]
+position = Vector2(1256, 592)
+
+[node name="Tree66" parent="Level/TreeGroup" unique_id=1428512469 instance=ExtResource("7_lgr22")]
+position = Vector2(1278, 524)
+
+[node name="Tree67" parent="Level/TreeGroup" unique_id=2034655191 instance=ExtResource("7_lgr22")]
+position = Vector2(1257, 548)
+
+[node name="Tree68" parent="Level/TreeGroup" unique_id=1306460938 instance=ExtResource("7_lgr22")]
+position = Vector2(1272, 612)
+
+[node name="Tree69" parent="Level/TreeGroup" unique_id=1641178987 instance=ExtResource("7_lgr22")]
+position = Vector2(1268, 505)
+
+[node name="Tree70" parent="Level/TreeGroup" unique_id=1060351264 instance=ExtResource("7_lgr22")]
+position = Vector2(1280, 582)
+
+[node name="Tree71" parent="Level/TreeGroup" unique_id=714030898 instance=ExtResource("7_lgr22")]
+position = Vector2(1257, 483)
+
+[node name="Tree72" parent="Level/TreeGroup" unique_id=2050358508 instance=ExtResource("7_lgr22")]
+position = Vector2(1279, 415)
+
+[node name="Tree73" parent="Level/TreeGroup" unique_id=1844737631 instance=ExtResource("7_lgr22")]
+position = Vector2(1258, 439)
+
+[node name="Tree74" parent="Level/TreeGroup" unique_id=893705487 instance=ExtResource("7_lgr22")]
+position = Vector2(1273, 503)
+
+[node name="Tree75" parent="Level/TreeGroup" unique_id=24832901 instance=ExtResource("7_lgr22")]
+position = Vector2(1269, 396)
+
+[node name="Tree76" parent="Level/TreeGroup" unique_id=1387814927 instance=ExtResource("7_lgr22")]
+position = Vector2(1281, 473)
+
+[node name="Tree77" parent="Level/TreeGroup" unique_id=2029179673 instance=ExtResource("7_lgr22")]
+position = Vector2(1256, 358)
+
+[node name="Tree78" parent="Level/TreeGroup" unique_id=80704643 instance=ExtResource("7_lgr22")]
+position = Vector2(1278, 290)
+
+[node name="Tree79" parent="Level/TreeGroup" unique_id=1108878105 instance=ExtResource("7_lgr22")]
+position = Vector2(1257, 314)
+
+[node name="Tree80" parent="Level/TreeGroup" unique_id=856306104 instance=ExtResource("7_lgr22")]
+position = Vector2(1272, 378)
+
+[node name="Tree81" parent="Level/TreeGroup" unique_id=1570290442 instance=ExtResource("7_lgr22")]
+position = Vector2(1268, 271)
+
+[node name="Tree82" parent="Level/TreeGroup" unique_id=1839481819 instance=ExtResource("7_lgr22")]
+position = Vector2(1280, 348)
+
+[node name="Tree83" parent="Level/TreeGroup" unique_id=688446564 instance=ExtResource("7_lgr22")]
+position = Vector2(1254, 220)
+
+[node name="Tree84" parent="Level/TreeGroup" unique_id=210177672 instance=ExtResource("7_lgr22")]
+position = Vector2(1276, 152)
+
+[node name="Tree85" parent="Level/TreeGroup" unique_id=228894940 instance=ExtResource("7_lgr22")]
+position = Vector2(1255, 176)
+
+[node name="Tree86" parent="Level/TreeGroup" unique_id=690591772 instance=ExtResource("7_lgr22")]
+position = Vector2(1270, 240)
+
+[node name="Tree87" parent="Level/TreeGroup" unique_id=1533360484 instance=ExtResource("7_lgr22")]
+position = Vector2(1266, 133)
+
+[node name="Tree88" parent="Level/TreeGroup" unique_id=630930517 instance=ExtResource("7_lgr22")]
+position = Vector2(1278, 210)
+
+[node name="Tree89" parent="Level/TreeGroup" unique_id=1447894913 instance=ExtResource("7_lgr22")]
+position = Vector2(1256, 137)
+
+[node name="Tree90" parent="Level/TreeGroup" unique_id=485217779 instance=ExtResource("7_lgr22")]
+position = Vector2(1278, 69)
+
+[node name="Tree91" parent="Level/TreeGroup" unique_id=954564315 instance=ExtResource("7_lgr22")]
+position = Vector2(1257, 93)
+
+[node name="Tree92" parent="Level/TreeGroup" unique_id=954135579 instance=ExtResource("7_lgr22")]
+position = Vector2(1272, 157)
+
+[node name="Tree93" parent="Level/TreeGroup" unique_id=2071971262 instance=ExtResource("7_lgr22")]
+position = Vector2(1268, 50)
+
+[node name="Tree94" parent="Level/TreeGroup" unique_id=358801095 instance=ExtResource("7_lgr22")]
+position = Vector2(1280, 127)
+
+[node name="Tree95" parent="Level/TreeGroup" unique_id=908325703 instance=ExtResource("7_lgr22")]
+position = Vector2(1111, 40)
+
+[node name="Tree96" parent="Level/TreeGroup" unique_id=1477233135 instance=ExtResource("7_lgr22")]
+position = Vector2(1087, 42)
+
+[node name="Tree97" parent="Level/TreeGroup" unique_id=1216273565 instance=ExtResource("7_lgr22")]
+position = Vector2(1149, 44)
+
+[node name="Tree98" parent="Level/TreeGroup" unique_id=542776296 instance=ExtResource("7_lgr22")]
+position = Vector2(1037, 44)
+
+[node name="Tree99" parent="Level/TreeGroup" unique_id=876613572 instance=ExtResource("7_lgr22")]
+position = Vector2(1179, 38)
+
+[node name="Tree100" parent="Level/TreeGroup" unique_id=1599222780 instance=ExtResource("7_lgr22")]
+position = Vector2(1204, 44)
+
+[node name="Tree101" parent="Level/TreeGroup" unique_id=1311519077 instance=ExtResource("7_lgr22")]
+position = Vector2(1225, 38)
+
+[node name="Tree102" parent="Level/TreeGroup" unique_id=1684702169 instance=ExtResource("7_lgr22")]
+position = Vector2(1062, 39)
+
+[node name="Tree103" parent="Level/TreeGroup" unique_id=1197275095 instance=ExtResource("7_lgr22")]
+position = Vector2(897, 39)
+
+[node name="Tree104" parent="Level/TreeGroup" unique_id=171417516 instance=ExtResource("7_lgr22")]
+position = Vector2(873, 41)
+
+[node name="Tree105" parent="Level/TreeGroup" unique_id=126788666 instance=ExtResource("7_lgr22")]
+position = Vector2(935, 43)
+
+[node name="Tree106" parent="Level/TreeGroup" unique_id=1014389195 instance=ExtResource("7_lgr22")]
+position = Vector2(823, 43)
+
+[node name="Tree107" parent="Level/TreeGroup" unique_id=772460168 instance=ExtResource("7_lgr22")]
+position = Vector2(965, 37)
+
+[node name="Tree108" parent="Level/TreeGroup" unique_id=102992699 instance=ExtResource("7_lgr22")]
+position = Vector2(990, 43)
+
+[node name="Tree109" parent="Level/TreeGroup" unique_id=451207906 instance=ExtResource("7_lgr22")]
+position = Vector2(1011, 37)
+
+[node name="Tree110" parent="Level/TreeGroup" unique_id=961346312 instance=ExtResource("7_lgr22")]
+position = Vector2(848, 38)
+
+[node name="Tree111" parent="Level/TreeGroup" unique_id=349122890 instance=ExtResource("7_lgr22")]
+position = Vector2(702, 40)
+
+[node name="Tree112" parent="Level/TreeGroup" unique_id=558845818 instance=ExtResource("7_lgr22")]
+position = Vector2(678, 42)
+
+[node name="Tree113" parent="Level/TreeGroup" unique_id=1292689725 instance=ExtResource("7_lgr22")]
+position = Vector2(740, 44)
+
+[node name="Tree114" parent="Level/TreeGroup" unique_id=1742412113 instance=ExtResource("7_lgr22")]
+position = Vector2(628, 44)
+
+[node name="Tree115" parent="Level/TreeGroup" unique_id=324580861 instance=ExtResource("7_lgr22")]
+position = Vector2(770, 38)
+
+[node name="Tree116" parent="Level/TreeGroup" unique_id=878451269 instance=ExtResource("7_lgr22")]
+position = Vector2(795, 44)
+
+[node name="Tree117" parent="Level/TreeGroup" unique_id=1121205203 instance=ExtResource("7_lgr22")]
+position = Vector2(816, 38)
+
+[node name="Tree118" parent="Level/TreeGroup" unique_id=689013366 instance=ExtResource("7_lgr22")]
+position = Vector2(653, 39)
+
+[node name="Tree119" parent="Level/TreeGroup" unique_id=1090991977 instance=ExtResource("7_lgr22")]
+position = Vector2(496, 43)
+
+[node name="Tree120" parent="Level/TreeGroup" unique_id=66661060 instance=ExtResource("7_lgr22")]
+position = Vector2(472, 45)
+
+[node name="Tree121" parent="Level/TreeGroup" unique_id=829732742 instance=ExtResource("7_lgr22")]
+position = Vector2(534, 47)
+
+[node name="Tree122" parent="Level/TreeGroup" unique_id=2058187201 instance=ExtResource("7_lgr22")]
+position = Vector2(422, 47)
+
+[node name="Tree123" parent="Level/TreeGroup" unique_id=131002479 instance=ExtResource("7_lgr22")]
+position = Vector2(564, 41)
+
+[node name="Tree124" parent="Level/TreeGroup" unique_id=1082040344 instance=ExtResource("7_lgr22")]
+position = Vector2(589, 47)
+
+[node name="Tree125" parent="Level/TreeGroup" unique_id=1183191138 instance=ExtResource("7_lgr22")]
+position = Vector2(610, 41)
+
+[node name="Tree126" parent="Level/TreeGroup" unique_id=1029589099 instance=ExtResource("7_lgr22")]
+position = Vector2(447, 42)
+
+[node name="Tree127" parent="Level/TreeGroup" unique_id=34673805 instance=ExtResource("7_lgr22")]
+position = Vector2(298, 41)
+
+[node name="Tree128" parent="Level/TreeGroup" unique_id=1450997045 instance=ExtResource("7_lgr22")]
+position = Vector2(274, 43)
+
+[node name="Tree129" parent="Level/TreeGroup" unique_id=1308552365 instance=ExtResource("7_lgr22")]
+position = Vector2(336, 45)
+
+[node name="Tree130" parent="Level/TreeGroup" unique_id=149630625 instance=ExtResource("7_lgr22")]
+position = Vector2(224, 45)
+
+[node name="Tree131" parent="Level/TreeGroup" unique_id=1735005156 instance=ExtResource("7_lgr22")]
+position = Vector2(366, 39)
+
+[node name="Tree132" parent="Level/TreeGroup" unique_id=1155533483 instance=ExtResource("7_lgr22")]
+position = Vector2(391, 45)
+
+[node name="Tree133" parent="Level/TreeGroup" unique_id=1342673755 instance=ExtResource("7_lgr22")]
+position = Vector2(412, 39)
+
+[node name="Tree134" parent="Level/TreeGroup" unique_id=1751419439 instance=ExtResource("7_lgr22")]
+position = Vector2(249, 40)
+
+[node name="Tree135" parent="Level/TreeGroup" unique_id=1749276062 instance=ExtResource("7_lgr22")]
+position = Vector2(94, 41)
+
+[node name="Tree136" parent="Level/TreeGroup" unique_id=1279279566 instance=ExtResource("7_lgr22")]
+position = Vector2(70, 43)
+
+[node name="Tree137" parent="Level/TreeGroup" unique_id=615497226 instance=ExtResource("7_lgr22")]
+position = Vector2(132, 45)
+
+[node name="Tree138" parent="Level/TreeGroup" unique_id=1714331340 instance=ExtResource("7_lgr22")]
+position = Vector2(20, 45)
+
+[node name="Tree139" parent="Level/TreeGroup" unique_id=1374498829 instance=ExtResource("7_lgr22")]
+position = Vector2(162, 39)
+
+[node name="Tree140" parent="Level/TreeGroup" unique_id=112978148 instance=ExtResource("7_lgr22")]
+position = Vector2(187, 45)
+
+[node name="Tree141" parent="Level/TreeGroup" unique_id=1990145666 instance=ExtResource("7_lgr22")]
+position = Vector2(208, 39)
+
+[node name="Tree142" parent="Level/TreeGroup" unique_id=1585097538 instance=ExtResource("7_lgr22")]
+position = Vector2(45, 40)
+
+[node name="Tree143" parent="Level/TreeGroup" unique_id=41973081 instance=ExtResource("7_lgr22")]
+position = Vector2(24, 279)
+
+[node name="Tree144" parent="Level/TreeGroup" unique_id=1952791525 instance=ExtResource("7_lgr22")]
+position = Vector2(46, 211)
+
+[node name="Tree145" parent="Level/TreeGroup" unique_id=547798476 instance=ExtResource("7_lgr22")]
+position = Vector2(25, 235)
+
+[node name="Tree146" parent="Level/TreeGroup" unique_id=2008309830 instance=ExtResource("7_lgr22")]
+position = Vector2(40, 299)
+
+[node name="Tree147" parent="Level/TreeGroup" unique_id=129426508 instance=ExtResource("7_lgr22")]
+position = Vector2(36, 192)
+
+[node name="Tree148" parent="Level/TreeGroup" unique_id=754847019 instance=ExtResource("7_lgr22")]
+position = Vector2(48, 269)
+
+[node name="Tree149" parent="Level/TreeGroup" unique_id=342240856 instance=ExtResource("7_lgr22")]
+position = Vector2(23, 166)
+
+[node name="Tree150" parent="Level/TreeGroup" unique_id=691988514 instance=ExtResource("7_lgr22")]
+position = Vector2(45, 98)
+
+[node name="Tree151" parent="Level/TreeGroup" unique_id=291045593 instance=ExtResource("7_lgr22")]
+position = Vector2(24, 122)
+
+[node name="Tree152" parent="Level/TreeGroup" unique_id=253715593 instance=ExtResource("7_lgr22")]
+position = Vector2(39, 186)
+
+[node name="Tree153" parent="Level/TreeGroup" unique_id=40764156 instance=ExtResource("7_lgr22")]
+position = Vector2(35, 79)
+
+[node name="Tree154" parent="Level/TreeGroup" unique_id=1478755739 instance=ExtResource("7_lgr22")]
+position = Vector2(27, 531)
+
+[node name="Tree155" parent="Level/TreeGroup" unique_id=1869262277 instance=ExtResource("7_lgr22")]
+position = Vector2(49, 463)
+
+[node name="Tree156" parent="Level/TreeGroup" unique_id=788039057 instance=ExtResource("7_lgr22")]
+position = Vector2(28, 487)
+
+[node name="Tree157" parent="Level/TreeGroup" unique_id=800568084 instance=ExtResource("7_lgr22")]
+position = Vector2(43, 551)
+
+[node name="Tree158" parent="Level/TreeGroup" unique_id=185625835 instance=ExtResource("7_lgr22")]
+position = Vector2(39, 444)
+
+[node name="Tree159" parent="Level/TreeGroup" unique_id=1924818650 instance=ExtResource("7_lgr22")]
+position = Vector2(51, 521)
+
+[node name="Tree160" parent="Level/TreeGroup" unique_id=1115446558 instance=ExtResource("7_lgr22")]
+position = Vector2(26, 418)
+
+[node name="Tree161" parent="Level/TreeGroup" unique_id=1310948494 instance=ExtResource("7_lgr22")]
+position = Vector2(48, 350)
+
+[node name="Tree162" parent="Level/TreeGroup" unique_id=221194715 instance=ExtResource("7_lgr22")]
+position = Vector2(27, 374)
+
+[node name="Tree163" parent="Level/TreeGroup" unique_id=1591115325 instance=ExtResource("7_lgr22")]
+position = Vector2(42, 438)
+
+[node name="Tree164" parent="Level/TreeGroup" unique_id=1176969351 instance=ExtResource("7_lgr22")]
+position = Vector2(38, 331)
+
+[node name="Tree165" parent="Level/TreeGroup" unique_id=386441088 instance=ExtResource("7_lgr22")]
+position = Vector2(27, 777)
+
+[node name="Tree166" parent="Level/TreeGroup" unique_id=1205111812 instance=ExtResource("7_lgr22")]
+position = Vector2(49, 709)
+
+[node name="Tree167" parent="Level/TreeGroup" unique_id=1616018937 instance=ExtResource("7_lgr22")]
+position = Vector2(28, 733)
+
+[node name="Tree168" parent="Level/TreeGroup" unique_id=1457112134 instance=ExtResource("7_lgr22")]
+position = Vector2(43, 797)
+
+[node name="Tree169" parent="Level/TreeGroup" unique_id=538005309 instance=ExtResource("7_lgr22")]
+position = Vector2(39, 690)
+
+[node name="Tree170" parent="Level/TreeGroup" unique_id=918189887 instance=ExtResource("7_lgr22")]
+position = Vector2(51, 767)
+
+[node name="Tree171" parent="Level/TreeGroup" unique_id=576206927 instance=ExtResource("7_lgr22")]
+position = Vector2(26, 664)
+
+[node name="Tree172" parent="Level/TreeGroup" unique_id=1847470565 instance=ExtResource("7_lgr22")]
+position = Vector2(48, 596)
+
+[node name="Tree173" parent="Level/TreeGroup" unique_id=2147464575 instance=ExtResource("7_lgr22")]
+position = Vector2(27, 620)
+
+[node name="Tree174" parent="Level/TreeGroup" unique_id=1747447458 instance=ExtResource("7_lgr22")]
+position = Vector2(42, 684)
+
+[node name="Tree175" parent="Level/TreeGroup" unique_id=1608299028 instance=ExtResource("7_lgr22")]
+position = Vector2(38, 577)
+
+[node name="Tree176" parent="Level/TreeGroup" unique_id=1604092344 instance=ExtResource("7_lgr22")]
+position = Vector2(23, 984)
+
+[node name="Tree177" parent="Level/TreeGroup" unique_id=884369276 instance=ExtResource("7_lgr22")]
+position = Vector2(45, 916)
+
+[node name="Tree178" parent="Level/TreeGroup" unique_id=1714633317 instance=ExtResource("7_lgr22")]
+position = Vector2(24, 940)
+
+[node name="Tree179" parent="Level/TreeGroup" unique_id=1525374064 instance=ExtResource("7_lgr22")]
+position = Vector2(39, 1004)
+
+[node name="Tree180" parent="Level/TreeGroup" unique_id=17319347 instance=ExtResource("7_lgr22")]
+position = Vector2(35, 897)
+
+[node name="Tree181" parent="Level/TreeGroup" unique_id=1457306520 instance=ExtResource("7_lgr22")]
+position = Vector2(47, 974)
+
+[node name="Tree182" parent="Level/TreeGroup" unique_id=687439978 instance=ExtResource("7_lgr22")]
+position = Vector2(22, 871)
+
+[node name="Tree183" parent="Level/TreeGroup" unique_id=413688165 instance=ExtResource("7_lgr22")]
+position = Vector2(44, 803)
+
+[node name="Tree184" parent="Level/TreeGroup" unique_id=881315603 instance=ExtResource("7_lgr22")]
+position = Vector2(23, 827)
+
+[node name="Tree185" parent="Level/TreeGroup" unique_id=1111716154 instance=ExtResource("7_lgr22")]
+position = Vector2(38, 891)
+
+[node name="Tree186" parent="Level/TreeGroup" unique_id=1297423506 instance=ExtResource("7_lgr22")]
+position = Vector2(34, 784)
+
+[node name="Tree187" parent="Level/TreeGroup" unique_id=1387950405 instance=ExtResource("7_lgr22")]
+position = Vector2(558, 394)
+
+[node name="Tree188" parent="Level/TreeGroup" unique_id=1720809069 instance=ExtResource("7_lgr22")]
+position = Vector2(585, 415)
+
+[node name="Tree189" parent="Level/TreeGroup" unique_id=100405407 instance=ExtResource("7_lgr22")]
+position = Vector2(565, 448)
+
+[node name="Tree190" parent="Level/TreeGroup" unique_id=1242322492 instance=ExtResource("7_lgr22")]
+position = Vector2(600, 528)
+
+[node name="Tree191" parent="Level/TreeGroup" unique_id=2008166329 instance=ExtResource("7_lgr22")]
+position = Vector2(589, 485)
+
+[node name="Tree192" parent="Level/TreeGroup" unique_id=969631551 instance=ExtResource("7_lgr22")]
+position = Vector2(549, 662)
+
+[node name="Tree193" parent="Level/TreeGroup" unique_id=1501209294 instance=ExtResource("7_lgr22")]
+position = Vector2(560, 615)
+
+[node name="Tree194" parent="Level/TreeGroup" unique_id=2085739481 instance=ExtResource("7_lgr22")]
+position = Vector2(521, 439)
+
+[node name="Tree195" parent="Level/TreeGroup" unique_id=1315881056 instance=ExtResource("7_lgr22")]
+position = Vector2(528, 496)
+
+[node name="Tree196" parent="Level/TreeGroup" unique_id=159108885 instance=ExtResource("7_lgr22")]
+position = Vector2(538, 956)
+
+[node name="Tree197" parent="Level/TreeGroup" unique_id=465416738 instance=ExtResource("7_lgr22")]
+position = Vector2(542, 912)
+
+[node name="Tree198" parent="Level/TreeGroup" unique_id=312786526 instance=ExtResource("7_lgr22")]
+position = Vector2(535, 860)
+
+[node name="Tree199" parent="Level/TreeGroup" unique_id=1844635361 instance=ExtResource("7_lgr22")]
+position = Vector2(538, 803)
+
+[node name="Tree200" parent="Level/TreeGroup" unique_id=769169925 instance=ExtResource("7_lgr22")]
+position = Vector2(537, 748)
+
+[node name="Tree201" parent="Level/TreeGroup" unique_id=953517817 instance=ExtResource("7_lgr22")]
+position = Vector2(525, 680)
+
+[node name="Tree202" parent="Level/TreeGroup" unique_id=881775734 instance=ExtResource("7_lgr22")]
+position = Vector2(556, 555)
+
+[node name="Tree203" parent="Level/TreeGroup" unique_id=109339323 instance=ExtResource("7_lgr22")]
+position = Vector2(514, 615)
+
+[node name="Tree204" parent="Level/TreeGroup" unique_id=1195766201 instance=ExtResource("7_lgr22")]
+position = Vector2(517, 548)
+
+[node name="Tree205" parent="Level/TreeGroup" unique_id=183683005 instance=ExtResource("7_lgr22")]
+position = Vector2(623, 968)
+
+[node name="Tree206" parent="Level/TreeGroup" unique_id=1075549557 instance=ExtResource("7_lgr22")]
+position = Vector2(579, 950)
+
+[node name="Tree207" parent="Level/TreeGroup" unique_id=890953031 instance=ExtResource("7_lgr22")]
+position = Vector2(610, 911)
+
+[node name="Tree208" parent="Level/TreeGroup" unique_id=1418174675 instance=ExtResource("7_lgr22")]
+position = Vector2(583, 897)
+
+[node name="Tree209" parent="Level/TreeGroup" unique_id=295225282 instance=ExtResource("7_lgr22")]
+position = Vector2(602, 863)
+
+[node name="Tree210" parent="Level/TreeGroup" unique_id=1198791068 instance=ExtResource("7_lgr22")]
+position = Vector2(570, 837)
+
+[node name="Tree211" parent="Level/TreeGroup" unique_id=1318412001 instance=ExtResource("7_lgr22")]
+position = Vector2(578, 792)
+
+[node name="Tree212" parent="Level/TreeGroup" unique_id=2053959276 instance=ExtResource("7_lgr22")]
+position = Vector2(586, 760)
+
+[node name="Tree213" parent="Level/TreeGroup" unique_id=1918409531 instance=ExtResource("7_lgr22")]
+position = Vector2(561, 741)
+
+[node name="Tree214" parent="Level/TreeGroup" unique_id=754591752 instance=ExtResource("7_lgr22")]
+position = Vector2(586, 712)
+
+[node name="Tree215" parent="Level/TreeGroup" unique_id=1533724441 instance=ExtResource("7_lgr22")]
+position = Vector2(584, 675)
+
+[node name="Tree216" parent="Level/TreeGroup" unique_id=1669140687 instance=ExtResource("7_lgr22")]
+position = Vector2(596, 647)
+
+[node name="Tree217" parent="Level/TreeGroup" unique_id=1349131436 instance=ExtResource("7_lgr22")]
+position = Vector2(605, 618)
+
+[node name="Tree218" parent="Level/TreeGroup" unique_id=1848370649 instance=ExtResource("7_lgr22")]
+position = Vector2(599, 580)
+
+[node name="Tree219" parent="Level/TreeGroup" unique_id=1566699194 instance=ExtResource("7_lgr22")]
+position = Vector2(578, 534)
+
+[node name="Tree220" parent="Level/TreeGroup" unique_id=1855274767 instance=ExtResource("7_lgr22")]
+position = Vector2(561, 496)
+
+[node name="Tree221" parent="Level/TreeGroup" unique_id=757095253 instance=ExtResource("7_lgr22")]
+position = Vector2(131, 895)
+
+[node name="Tree222" parent="Level/TreeGroup" unique_id=801944467 instance=ExtResource("7_lgr22")]
+position = Vector2(96, 794)
+
+[node name="Tree223" parent="Level/TreeGroup" unique_id=2131895481 instance=ExtResource("7_lgr22")]
+position = Vector2(154, 631)
+
+[node name="Tree224" parent="Level/TreeGroup" unique_id=9667198 instance=ExtResource("7_lgr22")]
+position = Vector2(988, 95)
+
+[node name="Tree225" parent="Level/TreeGroup" unique_id=786961092 instance=ExtResource("7_lgr22")]
+position = Vector2(839, 593)
+
+[node name="Tree226" parent="Level/TreeGroup" unique_id=1273598319 instance=ExtResource("7_lgr22")]
+position = Vector2(617, 208)
+
+[node name="Tree227" parent="Level/TreeGroup" unique_id=2034278760 instance=ExtResource("7_lgr22")]
+position = Vector2(583, 225)
+
+[node name="Tree228" parent="Level/TreeGroup" unique_id=660332300 instance=ExtResource("7_lgr22")]
+position = Vector2(101, 97)
+
+[node name="Tree229" parent="Level/TreeGroup" unique_id=611497119 instance=ExtResource("7_lgr22")]
+position = Vector2(737, 777)
+
+[node name="Tree230" parent="Level/TreeGroup" unique_id=2096500469 instance=ExtResource("7_lgr22")]
+position = Vector2(492, 798)
+
+[node name="Tree231" parent="Level/TreeGroup" unique_id=576604676 instance=ExtResource("7_lgr22")]
+position = Vector2(482, 931)
+
+[node name="Tree232" parent="Level/TreeGroup" unique_id=84797065 instance=ExtResource("7_lgr22")]
+position = Vector2(1175, 581)
+
+[node name="Tree233" parent="Level/TreeGroup" unique_id=1942805711 instance=ExtResource("7_lgr22")]
+position = Vector2(1209, 130)
+
+[node name="Tree234" parent="Level/TreeGroup" unique_id=317672074 instance=ExtResource("7_lgr22")]
+position = Vector2(1205, 210)
+
+[node name="Tree235" parent="Level/TreeGroup" unique_id=1906150383 instance=ExtResource("7_lgr22")]
+position = Vector2(1223, 328)
+
+[node name="Tree236" parent="Level/TreeGroup" unique_id=528499791 instance=ExtResource("7_lgr22")]
+position = Vector2(1188, 690)
+
+[node name="Tree237" parent="Level/TreeGroup" unique_id=1435048425 instance=ExtResource("7_lgr22")]
+position = Vector2(441, 608)
+
+[node name="Tree238" parent="Level/TreeGroup" unique_id=232271262 instance=ExtResource("7_lgr22")]
+position = Vector2(430, 702)
+
+[node name="Tree239" parent="Level/TreeGroup" unique_id=890788444 instance=ExtResource("7_lgr22")]
+position = Vector2(710, 672)
+
+[node name="Tree240" parent="Level/TreeGroup" unique_id=404571829 instance=ExtResource("7_lgr22")]
+position = Vector2(671, 918)
+
+[node name="Tree241" parent="Level/TreeGroup" unique_id=1444322462 instance=ExtResource("7_lgr22")]
+position = Vector2(632, 780)
+
+[node name="Tree242" parent="Level/TreeGroup" unique_id=940536670 instance=ExtResource("7_lgr22")]
+position = Vector2(673, 844)
+
+[node name="Tree243" parent="Level/TreeGroup" unique_id=796813919 instance=ExtResource("7_lgr22")]
+position = Vector2(689, 758)
+
+[node name="Tree244" parent="Level/TreeGroup" unique_id=1579042447 instance=ExtResource("7_lgr22")]
+position = Vector2(658, 688)
+
+[node name="Tree245" parent="Level/TreeGroup" unique_id=330369263 instance=ExtResource("7_lgr22")]
+position = Vector2(1231, 656)
+
+[node name="Tree246" parent="Level/TreeGroup" unique_id=2075080623 instance=ExtResource("7_lgr22")]
+position = Vector2(1215, 484)
+
+[node name="Tree247" parent="Level/TreeGroup" unique_id=480938863 instance=ExtResource("7_lgr22")]
+position = Vector2(1213, 569)
+
+[node name="Tree248" parent="Level/TreeGroup" unique_id=1046287430 instance=ExtResource("7_lgr22")]
+position = Vector2(1192, 627)
+
+[node name="Tree249" parent="Level/TreeGroup" unique_id=11511304 instance=ExtResource("7_lgr22")]
+position = Vector2(1184, 280)
+
+[node name="Tree250" parent="Level/TreeGroup" unique_id=103634763 instance=ExtResource("7_lgr22")]
+position = Vector2(1187, 368)
+
+[node name="Tree251" parent="Level/TreeGroup" unique_id=521251852 instance=ExtResource("7_lgr22")]
+position = Vector2(1192, 453)
+
+[node name="Tree252" parent="Level/TreeGroup" unique_id=1008563010 instance=ExtResource("7_lgr22")]
+position = Vector2(1182, 534)
+
+[node name="Tree253" parent="Level/TreeGroup" unique_id=2079074474 instance=ExtResource("7_lgr22")]
+position = Vector2(1172, 188)
+
+[node name="Tree254" parent="Level/TreeGroup" unique_id=6890585 instance=ExtResource("7_lgr22")]
+position = Vector2(1124, 97)
+
+[node name="Tree255" parent="Level/TreeGroup" unique_id=1396782429 instance=ExtResource("7_lgr22")]
+position = Vector2(1169, 116)
+
+[node name="Tree256" parent="Level/TreeGroup" unique_id=36238980 instance=ExtResource("7_lgr22")]
+position = Vector2(1115, 166)
+
+[node name="Tree257" parent="Level/TreeGroup" unique_id=292482902 instance=ExtResource("7_lgr22")]
+position = Vector2(1062, 119)
+
+[node name="Tree258" parent="Level/TreeGroup" unique_id=1284064797 instance=ExtResource("7_lgr22")]
+position = Vector2(705, 82)
+
+[node name="Tree259" parent="Level/TreeGroup" unique_id=640866882 instance=ExtResource("7_lgr22")]
+position = Vector2(862, 91)
+
+[node name="Tree260" parent="Level/TreeGroup" unique_id=506113576 instance=ExtResource("7_lgr22")]
+position = Vector2(923, 90)
+
+[node name="Tree261" parent="Level/TreeGroup" unique_id=424761445 instance=ExtResource("7_lgr22")]
+position = Vector2(766, 89)
+
+[node name="Tree262" parent="Level/TreeGroup" unique_id=738102276 instance=ExtResource("7_lgr22")]
+position = Vector2(984, 644)
+
+[node name="Tree263" parent="Level/TreeGroup" unique_id=1067380477 instance=ExtResource("7_lgr22")]
+position = Vector2(906, 268)
+
+[node name="Tree264" parent="Level/TreeGroup" unique_id=1877016122 instance=ExtResource("7_lgr22")]
+position = Vector2(531, 280)
+
+[node name="Tree265" parent="Level/TreeGroup" unique_id=912828952 instance=ExtResource("7_lgr22")]
+position = Vector2(921, 245)
+
+[node name="Tree266" parent="Level/TreeGroup" unique_id=1300499898 instance=ExtResource("7_lgr22")]
+position = Vector2(960, 567)
+
+[node name="Tree267" parent="Level/TreeGroup" unique_id=1415480111 instance=ExtResource("7_lgr22")]
+position = Vector2(1028, 608)
+
+[node name="Tree268" parent="Level/TreeGroup" unique_id=1056413058 instance=ExtResource("7_lgr22")]
+position = Vector2(1010, 511)
+
+[node name="Tree269" parent="Level/TreeGroup" unique_id=1050862864 instance=ExtResource("7_lgr22")]
+position = Vector2(716, 610)
+
+[node name="Tree270" parent="Level/TreeGroup" unique_id=1912788122 instance=ExtResource("7_lgr22")]
+position = Vector2(647, 537)
+
+[node name="Tree271" parent="Level/TreeGroup" unique_id=808545432 instance=ExtResource("7_lgr22")]
+position = Vector2(618, 432)
+
+[node name="Tree272" parent="Level/TreeGroup" unique_id=24117039 instance=ExtResource("7_lgr22")]
+position = Vector2(654, 478)
+
+[node name="Tree273" parent="Level/TreeGroup" unique_id=853631509 instance=ExtResource("7_lgr22")]
+position = Vector2(710, 503)
+
+[node name="Tree274" parent="Level/TreeGroup" unique_id=1082244631 instance=ExtResource("7_lgr22")]
+position = Vector2(656, 617)
+
+[node name="Tree275" parent="Level/TreeGroup" unique_id=1541244652 instance=ExtResource("7_lgr22")]
+position = Vector2(679, 562)
+
+[node name="Tree276" parent="Level/TreeGroup" unique_id=1706274840 instance=ExtResource("7_lgr22")]
+position = Vector2(832, 551)
+
+[node name="Tree277" parent="Level/TreeGroup" unique_id=1848888822 instance=ExtResource("7_lgr22")]
+position = Vector2(485, 280)
+
+[node name="Tree278" parent="Level/TreeGroup" unique_id=585363185 instance=ExtResource("7_lgr22")]
+position = Vector2(570, 276)
+
+[node name="Tree279" parent="Level/TreeGroup" unique_id=1395090804 instance=ExtResource("7_lgr22")]
+position = Vector2(615, 255)
+
+[node name="Tree280" parent="Level/TreeGroup" unique_id=1635260578 instance=ExtResource("7_lgr22")]
+position = Vector2(664, 282)
+
+[node name="Tree281" parent="Level/TreeGroup" unique_id=1909863752 instance=ExtResource("7_lgr22")]
+position = Vector2(254, 369)
+
+[node name="Tree282" parent="Level/TreeGroup" unique_id=24531493 instance=ExtResource("7_lgr22")]
+position = Vector2(481, 119)
+
+[node name="Tree283" parent="Level/TreeGroup" unique_id=552385834 instance=ExtResource("7_lgr22")]
+position = Vector2(86, 148)
+
+[node name="Tree284" parent="Level/TreeGroup" unique_id=614594282 instance=ExtResource("7_lgr22")]
+position = Vector2(110, 212)
+
+[node name="Tree285" parent="Level/TreeGroup" unique_id=2019611723 instance=ExtResource("7_lgr22")]
+position = Vector2(86, 273)
+
+[node name="Tree286" parent="Level/TreeGroup" unique_id=1031666273 instance=ExtResource("7_lgr22")]
+position = Vector2(107, 329)
+
+[node name="Tree287" parent="Level/TreeGroup" unique_id=1841867910 instance=ExtResource("7_lgr22")]
+position = Vector2(85, 377)
+
+[node name="Tree288" parent="Level/TreeGroup" unique_id=986717036 instance=ExtResource("7_lgr22")]
+position = Vector2(84, 552)
+
+[node name="Tree289" parent="Level/TreeGroup" unique_id=782180188 instance=ExtResource("7_lgr22")]
+position = Vector2(120, 574)
+
+[node name="Tree290" parent="Level/TreeGroup" unique_id=44734034 instance=ExtResource("7_lgr22")]
+position = Vector2(103, 437)
+
+[node name="Tree291" parent="Level/TreeGroup" unique_id=445705494 instance=ExtResource("7_lgr22")]
+position = Vector2(96, 505)
+
+[node name="Tree292" parent="Level/TreeGroup" unique_id=1809184972 instance=ExtResource("7_lgr22")]
+position = Vector2(418, 936)
+
+[node name="Tree293" parent="Level/TreeGroup" unique_id=2100943645 instance=ExtResource("7_lgr22")]
+position = Vector2(420, 651)
+
+[node name="Tree294" parent="Level/TreeGroup" unique_id=1437643188 instance=ExtResource("7_lgr22")]
+position = Vector2(461, 866)
+
+[node name="Tree295" parent="Level/TreeGroup" unique_id=667524065 instance=ExtResource("7_lgr22")]
+position = Vector2(457, 764)
+
+[node name="Tree296" parent="Level/TreeGroup" unique_id=1719747614 instance=ExtResource("7_lgr22")]
+position = Vector2(474, 683)
+
+[node name="Tree297" parent="Level/TreeGroup" unique_id=985526436 instance=ExtResource("7_lgr22")]
+position = Vector2(409, 570)
+
+[node name="Tree298" parent="Level/TreeGroup" unique_id=1843736301 instance=ExtResource("7_lgr22")]
+position = Vector2(473, 585)
+
+[node name="Tree299" parent="Level/TreeGroup" unique_id=881643939 instance=ExtResource("7_lgr22")]
+position = Vector2(439, 518)
+
+[node name="Tree300" parent="Level/TreeGroup" unique_id=1616425508 instance=ExtResource("7_lgr22")]
+position = Vector2(476, 478)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level" unique_id=398525295 groups=["navigation_polygon_source_geometry_group"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D" unique_id=152579775]
+position = Vector2(25, 514)
+shape = SubResource("RectangleShape2D_lgr22")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/StaticBody2D" unique_id=178676494]
+position = Vector2(1268, 512)
+shape = SubResource("RectangleShape2D_lgr22")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level/StaticBody2D" unique_id=195110117]
+position = Vector2(640.5, 20)
+shape = SubResource("RectangleShape2D_trn2v")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Level/StaticBody2D" unique_id=189956704]
+position = Vector2(645, 1008)
+shape = SubResource("RectangleShape2D_trn2v")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Level/StaticBody2D" unique_id=2141580234]
+position = Vector2(555.5, 668)
+shape = SubResource("RectangleShape2D_03owx")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Level/StaticBody2D" unique_id=1204509355]
+position = Vector2(85, 428)
+shape = SubResource("RectangleShape2D_wkp8b")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Level/StaticBody2D" unique_id=1491093814]
+position = Vector2(1198, 594)
+shape = SubResource("RectangleShape2D_20pc6")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Level" unique_id=320128407]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_3dxm6")
+
+[node name="CanvasLayer_GameUI" parent="." unique_id=940134588 instance=ExtResource("8_trn2v")]

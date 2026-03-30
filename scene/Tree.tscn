@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://hieg58bvct0i"]
+
+[ext_resource type="Texture2D" uid="uid://cbx1veo732dsw" path="res://Asset/Level/TreeAndGrass.png" id="1_drhme"]
+[ext_resource type="Script" uid="uid://c1uw8p4emwj1w" path="res://script/random_region.gd" id="2_e8rgn"]
+
+[node name="Tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_drhme")
+offset = Vector2(0, -40)
+region_enabled = true
+region_rect = Rect2(48, 0, 64, 96)
+script = ExtResource("2_e8rgn")
+randomRegions = Array[Rect2]([Rect2(48, 0, 64, 96), Rect2(112, 0, 64, 96), Rect2(176, 0, 64, 96), Rect2(240, 0, 64, 96), Rect2(304, 0, 64, 96)])
