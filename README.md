@@ -11,7 +11,7 @@
   
 ## 自主Debug & 优化（我独立完成的部分）
 - 解决隔墙检测问题(使用RayCast2D射线检测)
-- 解决area2D_enter信号状态触发问题(get_overlapping_areas函数定期检测玩家碰撞箱)
+- 解决area2D_entered信号状态触发问题(get_overlapping_areas函数定期检测玩家碰撞箱)
 - 增加游戏结束画面和回到主界面按钮
 
 ## 技术栈
