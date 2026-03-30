@@ -25,4 +25,3 @@
 3. 直接运行
 
 演示视频：https://pan.quark.cn/s/c745a435e26b
-GitHub Pages / 下载地址：
