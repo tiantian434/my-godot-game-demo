@@ -17,8 +17,7 @@
 ## 技术栈
 - Godot 4.x + GDScript
 - Scene Tree、Signal系统、AnimationPlayer、TileMap 等
-- 通过完整项目深入理解了Godot引擎架构与事件驱动机制
-- 
+
 ## 如何运行(windows)
 1. 下载仓库
 2. 双击IRIS.exe
